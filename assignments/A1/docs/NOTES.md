@@ -28,4 +28,17 @@ Query process
 
 1. user interaction
 2. ranking
-3. evaluation
+3. evaluations
+
+## Notes from class 2
+
+Chose age over freshness for archiving.
+
+Calculate likely age of resource then instruct bot to crawl them.
+
+Finding content blocks, token count vs html tag count.
+There is a plateau where the content is actually located.
+
+For paper presentation:
+- understand why the second paper cites the first paper.
+- Use google scholar to see why the second paper cites the first paper
