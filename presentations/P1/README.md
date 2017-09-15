@@ -77,12 +77,15 @@ Terms of evaluation are below:
 
 ### Presentation notes
 
-
-
-
-
-
-
-
-
 Link to Google presentation [here](https://docs.google.com/presentation/d/1eau_8C03Lz_89oHDMq0hZ525wRUfiwwXmBYQxyrGdbw/edit?usp=sharing).
+
+### Feedback after presenting
+
+- Put page numbers
+- Center images and add annotations rather than half and half.
+Images are the core part to present
+- Need more examples for definitions.
+For example shingling and tokens to bit-strings.
+This will prolong the presentation and help visualize things.
+- Try to find a better citing paper.
+- Remove similar pages
