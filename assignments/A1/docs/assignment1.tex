@@ -173,6 +173,59 @@ of matching, or if the search is using some type of ranking.
 
 \subsection*{Answer}
 
+Five websites with web services I use frequently that use some sort of search mechanism include: \url{quora.com}, \url{github.com}, \url{twitter.com}, \url{youtube.com}, and quite recently \url{docs.docker.com}.
+
+Quora is a popular question answer website based on topics. This website include a mixed search type of database querying and grep style. As shown below in Figure \ref{fig:quora}, if I start to search for ``webscience'' it will start to autocomplete it showing topics where that entry contains grep but not an exact match of the term. It also uses databases for storing these topics and a full text search of a topic is allowed which return all entries of that topic.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{quora.png}
+\caption{Quora search example}
+\label{fig:quora}
+\end{figure}
+
+Github also includes a database and grep style of searching. When I search for ``swift'' on github it shows the following containing this term: repositories, code, commits, issues, wikis, and users as shown in Figure \ref{fig:github}. This is obviously a grep for in-text occasions. However, the URI gives away a hint of database querying for a REST interface for example the following URI was sent for this term search: \url{https://github.com/search?utf8=%E2%9C%93&q=swift&type=}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{github.png}
+\caption{Github search example}
+\label{fig:github}
+\end{figure}
+
+Twitter is based on database searching. It uses services to take the input of a user then queries in their database.
+This request is then filtered down to 10 items whether it be users, hashtags, or topics as shown in Figure \ref{fig:twitter}.
+Each of these items is tagged which is noted in their database for tracking.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{twitter.png}
+\caption{Twitter search example}
+\label{fig:twitter}
+\end{figure}
+
+Youtube is my go to for music and any other video content. 
+Youtube uses a database for its search with an example query shown in Figure \ref{fig:youtube}. 
+When you track a request from youtube you'll see an outgoing request be sent to their services. 
+When the request is done you'll see the videos starting with your query term but when you follow that link it is based on a hash which is stored somewhere in database.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{youtube.png}
+\caption{Youtube search example}
+\label{fig:youtube}
+\end{figure}
+
+The docker docs, \url{docs.docker.com} is something I've been using quite frequently lately and I've noticed that this search is strictly a grep search. 
+Document websites for software are more often than not, built statically meaning they produce these files separately for each location on the website as shown in Figure \ref{fig:docker}.
+Also a sure tell for this is usually done by looking at network activity and for this website it showed no outgoing request on a search.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{docker.png}
+\caption{Docker docs search example}
+\label{fig:docker}
+\end{figure}
 
 
 \clearpage
@@ -220,14 +273,14 @@ repository due to them being ignored in my repository's \textbf{.gitignore} file
 \subsection*{Question}
 
 \begin{verbatim}
-
+Suppose that, in an effort to crawl web pages faster, you set up two crawling 
+machines with different starting seed URIs. Is this an effective strategy for 
+distributed crawling? Why or why not.
 \end{verbatim}
 
 \subsection*{Answer}
 
-\begin{center}
 
-\end{center}
 
 % \begin{figure}[h]
 % \centering
@@ -256,9 +309,9 @@ tags found in previously crawled documents.
 
 \subsection*{Answer}
 
-This question was relatively simple as we were posed this question previously in our CS532 class except it had the goal of extracting all pdf file from a webpage and not chasing further links.
+This question was relatively simple as we were posed a question very similar to this question previously in our CS532 class except it had the goal of extracting all pdf files from a webpage and not chasing further links.
 Therefore to answer this problem I used my code previously created from CS532 for assignment 1 but with some slight modifications as shown in Listing \ref{lst:crawler} \cite{cs532}.
-For instance, I added: a time delay, a set to track the links already crawled, a queue system, and a hop counter for each website for crawl level.
+For instance, I added: a time delay, a set to track the links already crawled, a queue system, and a hop counter for each website to track crawl level.
 In this problem I tested 1 and 2 hops on the website \url{http://www.cs.odu.edu/~gatkins/cs725/}. 
 With a max of 1 hop I found that I had queue size of 142 unique URIs remaining to crawl as shown in Figure \ref{fig:hop1}.
 With a max of 2 hops I found that I had queue size of 2626 unique URIs remaining to crawl as shown in Figure \ref{fig:hop2}.
