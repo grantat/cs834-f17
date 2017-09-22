@@ -113,46 +113,6 @@ When I used the \textit{grep} command searching any directories starting with ``
   \label{fig:esearch2}
   \end{figure}
 
-%For this problem I decided to use Realm's RSS feed, a news feed for mobile development \cite{realmref}. I had 7 categories to classify this feed which were: iOS, Android, React Native, Realm News, Databases, Nodejs and Xamarin. These categories mostly describe the topics that were found in these news feeds. Realm News was used to describe topics that weren't particularly programming fields or platforms but just generic news topics. Realm's RSS feed originally had approximately 700 items, I decided to take the most recent 100 items with the full list shown in my github repository \cite{github}. One thing I noticed before starting the subsequent problems was that a lot of the descriptions used common terms but in different context. For example, ``Reactive programming'' is not a synonym for ``React Native'' which was a programming language, this lead me to think that the classifier would later classify these items incorrectly.
-%
-%To get Realm's RSS feed I used the methods created in \textbf{getFeed.py} shown in Listing \ref{lst:q1getfeed}. The manual classification of the 100 RSS feed items was created in a seperate text file called \textbf{classifiedFeeds.txt}. This was used later for speeding up running the python script. The 100 items used in this assignment are shown in Table \ref{table:q1mclass1} and Table \ref{table:q1mclass} with their manual classification.
-
-%\begin{table}[h]
-%\centering
-%\begin{adjustbox}{max width=\linewidth}
-%\begin{tabular}{ | c | c |}
-%\hline
-%\textbf{Category} & \textbf{Count}  \\
-%\hline
-%Nodejs & 3 \\
-%Android & 19 \\
-%Databases & 5  \\
-%Xamarin & 5  \\
-%React Native & 4 \\
-%iOS & 41  \\
-%Realm News & 23 \\
-%\hline
-%\end{tabular}
-%\end{adjustbox}
-%\caption{Category and their count}
-%\label{table:q3calcs}
-%\end{table}
-
-\clearpage
-
-% \lstinputlisting[frame=single,caption={Python script to download Realm RSS Feed},label=lst:q1getfeed,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/getFeed.py}
-
-\clearpage
-
-
-
-% \clearpage
-%  \begin{figure}[h]
-%  \centering
-%  \includegraphics[scale=0.4]{d3followerGraph.png}
-%  \caption{All of Dr. Nelson's followers in D3 force directed graph}
-%  \label{fig:q1friendshipgraph}
-%  \end{figure}
 
 \clearpage
 
@@ -280,14 +240,17 @@ distributed crawling? Why or why not.
 
 \subsection*{Answer}
 
+This is not an effective strategy for distributed crawling. 
+An important idea to remember is that the web is a graph structure where many links will eventually connect to one another.
+With this in mind, as these web crawlers start crawling through their assigned URIs and the depth in which the URIs in that page start to branch to other websites they will eventually overlap URIs which have either already been crawled or already in line to be crawled.
+Recently for our paper presentations, I had to present a paper on IRLbot, a single server crawling bot which had answers to this sort of issue \cite{irlbot}.
 
+With crawlers being separated by threads, IRLbot incorporated URI lookup and storage algorithms to track the URIs which I agree would be the best option. 
+Whenever a URI is discovered it should be looked up inside the storage in which they track URIs and then cache the URI so the current crawlers can know even more quickly that they don't have to do a long search for this URI knowing its already been tracked.
+If the system recognizes it as a new URI it will be able to add it to an active queue system to be crawled on. 
+Again, since there are multiple crawlers the other crawlers can check the cache, the current URI queue, or a long lookup from storage if necessary.
+Overall this system would prove faster than time lost performing requests to these servers and then checking if a URI can be stored.
 
-% \begin{figure}[h]
-% \centering
-% \includegraphics[scale=0.6]{predictedSplit3.pdf}
-% \caption{Group split of 3 with Girvan-Newman algorithm from karateClub.R}
-% \label{fig:split3}
-% \end{figure}
 
 \clearpage
 
