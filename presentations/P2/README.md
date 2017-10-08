@@ -6,6 +6,8 @@
 
 ### Notes from textbook
 
+"If the Knuth book is too daunting, any standard algorithms
+textbook should be able to give you more detail about how merging works."
 
 ### Notes from
 
