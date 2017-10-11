@@ -15,7 +15,7 @@ textbook should be able to give you more detail about how merging works."
 
 Context is from **2001**.
 
-The problem: Search engines receive millions of queries daily, or 3.5 billion if you're google, a load never experienced by an IR system in 2001.
+The problem: Search engines receive millions of queries daily, or 3.5 billion if you're google in 2017, a load never experienced by an IR system in 2001.
 
 > Our work is distinct from previous ones because it presents
 experimental results on the effectiveness of different caching
@@ -51,12 +51,18 @@ it is not necessary to process those queries, and
 it is also combined with a inverted list of query terms, thus improving
 query processing time for the new queries that include at least one term.
 
+
+
+
+
+
+
 ### Notes from Performance of compressed inverted list caching in search engines
 
 
 
 ### Presentation notes
 
-Link to Google presentation [here](#).
+Link to Google presentation [here](https://docs.google.com/presentation/d/1DVG0fxRekgfrtf18ZsAU1rYtGo5Y5jEqXB-z3J17yA4/edit?usp=sharing).
 
 ### Feedback after presenting
