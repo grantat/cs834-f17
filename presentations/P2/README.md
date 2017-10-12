@@ -51,11 +51,7 @@ it is not necessary to process those queries, and
 it is also combined with a inverted list of query terms, thus improving
 query processing time for the new queries that include at least one term.
 
-
-
-
-
-
+This paper uses another paper's early recognition algorithm for document ranking in search engine.
 
 ### Notes from Performance of compressed inverted list caching in search engines
 
