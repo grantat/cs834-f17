@@ -13,3 +13,6 @@ __MACOSX
 *__pycache__
 # ignore papers saved
 /presentations/*/papers
+
+# ignore html A2
+en/
