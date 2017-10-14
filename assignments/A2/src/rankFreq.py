@@ -44,14 +44,14 @@ def tokenCounts(tokens):
         bigram_counts.setdefault(t, 0)
         bigram_counts[t] += 1
 
-    return token_counts, bigram_counts
+    return token_counts, bigram_counts, bigrams
 
 
-def calcProbC(token_list):
+def calcProbC(token_list, all_tokens):
     new_list = []
     for i, row in enumerate(token_list):
-        # prob = token count / num tokens
-        prob = float(row[1]) / len(token_list)
+        # prob = token count / all tokens
+        prob = float(row[1]) / len(all_tokens)
         # c = pos of freq in list * prob
         c = (i + 1) * prob
         new_list.append(row + [prob, c])
@@ -82,14 +82,14 @@ if __name__ == "__main__":
     file_list = unpackFiles()
     # get list of all tokens
     tokens = tokenizeFiles(file_list)
-    # count tokens. returns unigram and bigram list
-    tc, bc = tokenCounts(tokens)
+    # count tokens. returns unigram, bigram dictionaries, bigram entire list
+    tc, bc, bigrams = tokenCounts(tokens)
     # convert to sorted list based on frequeny
     t1 = convertDimensions(tc)
     t2 = convertDimensions(bc)
     # add calculations to each token(s)
-    t1 = calcProbC(t1)
-    t2 = calcProbC(t2)
+    t1 = calcProbC(t1, tokens)
+    t2 = calcProbC(t2, bigrams)
 
     write_csv("rankFreqUnigram.csv", "unigram", t1)
     write_csv("rankFreqBigram.csv", "bigram", t2)

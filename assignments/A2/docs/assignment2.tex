@@ -52,36 +52,73 @@
 \subsection*{Question}
 
 \begin{verbatim}
-1.2 	Site Search is another common application of search engines.
-In this case, search is restricted to the web pages at a given website.
-Compare site search to web search, vertical search, and enterprise search.
+4.1. Plot rank-frequency curves (using a log-log graph) for 
+words and bigrams in the Wikipedia collection available through 
+the book website (http://www.searchengines-book.com). Plot a 
+curve for the combination of the two. What are the best 
+values for the parameter c for each curve?
 \end{verbatim}
 
 \subsection*{Answer}
 
-To answer this question I decided to use the search query ``cs834-f17'' with modifications as necessary across each of these search types.
-For site search I used github.com as our course repository is hosted on github and will likely return results and as the name site search implies it only searches on the designated website.
-Google offers the option to site search with the command ``site:website'' which for my entry it is ``cs834-f17 site:github.com''  as shown in Figure \ref{fig:sitesearch} \cite{googlesite}.
-It only returned two results which is minimal and as expected because it is a unique term and the term ``cs834-f17'' isn't expected to be located in any other repository or description hosted on github.
+For this question I wrote two files of code, \textbf{rankFreq.py} and \textbf{rankFreq.R} in with the ``small'' wiki dataset provided from the textbooks website . 
+The first python file iterates through all of the wiki html files, tokenizes them, finds token frequency, and then writes them to a CSV in descending frequency order.
+To retrieve the text from each of the html files I used Beautifulsoup. 
+It should be noted when retrieving each token from the html files I did not take into account uppercase or lowercase as same terms, I treated them as different and more than probably affected the outcome of this answer.
+After the code tokenizing the terms it created a list of unigrams and bigrams for all the terms keeping them in separate lists to count frequencies.
+I used the NLTK python library to make bigram pairs.
+The code for this is shown below in Listing \ref{lst:q1py}.
+The top 10, ranked by token frequency, results are shown below in Figures \ref{fig:q1uni} and \ref{fig:q1bi}.
+The full CSV files can be found in my Github repository \cite{github}.
+Without removing stop words its apparent that words like ``the'' and ``of'' would some of the top unigram and bigram pairs.
 
-For web search I continued to use google. Using the query term ``cs834-f17'' this time without specifying anything else returned 57 results as shown in Figure \ref{fig:websearch}.
-Both web search and site search both return the same top result, which is the repository. Something that is interesting in this search is that it didn't show the second result
-from the site search. Instead the web search went to different domains to try and find ``cs834-f17'', for example \textit{github.io}. This should be noted as the precision in site search
-is seems to be more effective in the context of terms.
+ \lstinputlisting[frame=single,caption={Python script to tokenize and find frequencies and calculate C parameters},label=lst:q1py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/rankFreq.py}
+ 
+ To create the graphs I used R's ggplot2 library. 
+ The code to create these graphs is shown in Listing \ref{lst:q1R}.
+ The figures created from the afore mentioned code are shown in Figure \ref{fig:q1p1}, \ref{fig:q1p2}, and \ref{fig:q1p3}.
+For unigrams the best \textit{C} parameter was 0.14, while for bigrams it was 0.1.
+ 
+  \lstinputlisting[frame=single,caption={Python script to tokenize and find frequencies and calculate C parameters},label=lst:q1R,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/rankFreq.R}
 
-Continuing with vertical search I also made use of google images. The goal of vertical search is to search on a specific content type.
-The results were somewhat expected as there was in fact a picture of the author of the cs834-f17 repository, Dr. Nelson as shown in Figure \ref{fig:verticalsearch}, however prior to that image it seems of had lot of patent schemes for protein formulas. In this context it probably wasn't the best to use a vertical search.
-
-Finally when completing Enterprise search it should be noted that I don't have access to an intranet but I do have access to my own personal machine to conduct searches on my own file system.
-I used my operating system's implemented search in it file system and I also use the terminal command \textit{grep} to show a customized search on a subset of directories.
-Using my operating systems \textit{finder} program it searches across my entire computer of files with the words ``cs834-f17'' as shown in Figure \ref{fig:esearch1}. This type of seems more relatable to web search as it seem to generalize the results showing files that mention this term, but not every single file in my filesystem.
-When I used the \textit{grep} command searching any directories starting with ``cs'' it showed every occurrence where ``cs834-f17'' was used. This is more relatable to site search because it listed all locations of occurrence in these directories.
+%Finally when completing Enterprise search it should be noted that I don't have access to an intranet but I do have access to my own personal machine to conduct searches on my own file system.
+%I used my operating system's implemented search in it file system and I also use the terminal command \textit{grep} to show a customized search on a subset of directories.
+%Using my operating systems \textit{finder} program it searches across my entire computer of files with the words ``cs834-f17'' as shown in Figure \ref{fig:esearch1}. This type of seems more relatable to web search as it seem to generalize the results showing files that mention this term, but not every single file in my filesystem.
+%When I used the \textit{grep} command searching any directories starting with ``cs'' it showed every occurrence where ``cs834-f17'' was used. This is more relatable to site search because it listed all locations of occurrence in these directories.
 
   \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4]{sitesearch.png}
-  \caption{Site search example in google}
-  \label{fig:sitesearch}
+  \includegraphics[scale=0.6]{unigram_10.png}
+  \caption{Top 10 unigrams found}
+  \label{fig:q1uni}
+  \end{figure}
+
+  \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{bigram_10.png}
+  \caption{Top 10 bigrams found}
+  \label{fig:q1bi}
+  \end{figure}
+  
+   \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{unigram_plot.pdf}
+  \caption{Log-log plot of unigram frequency and probability}
+  \label{fig:q1p1}
+  \end{figure}
+
+   \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{bigram.pdf}
+  \caption{Log-log plot of bigram frequency and probability}
+  \label{fig:q1p2}
+  \end{figure}
+  
+   \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.9]{unigram_and_bigram.pdf}
+  \caption{Log-log plot of unigram and bigram frequencies and probabilities}
+  \label{fig:q1p3}
   \end{figure}
 
 
@@ -128,7 +165,6 @@ sitemap, and to help estimate the change frequency.
 \subsection*{Answer}
 
 
- \lstinputlisting[frame=single,caption={Python script create a sitemap from a directory's contents},label=lst:sitemap,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/sitemap.py}
 
 \clearpage
 
