@@ -137,15 +137,14 @@ documents are processed make any difference?
 
 To answer this question I again created two files, \textbf{vocabGrowth.py} and \textbf{vocabGrowth.R}.
 My python script use the Beautifulsoup library to parse out the html documents of the small wikipedia example.
-Much like my answer to the first question I traversed the html documents in order and then in reverse, each time tokenizing the text of html, taking an overall corpus count, and tracking unique vocabulary through each of the html documents. 
+Much like my answer to the first question I traversed the html documents in order and then in reverse, each time tokenizing the text of html, taking an overall corpus count,  tracking unique vocabulary through each of the html documents, and then saving all of these values to csv file denoting document iteration, corpus size, and vocab size when at that document.
 The code for this is shown in Listing \ref{lst:q2py}.
 The goal of this was simply see how the unique vocabulary list grows while the corpus size continues to grow.
 
-  \lstinputlisting[frame=single,caption={Python script to tokenize and find frequencies and calculate C parameters},label=lst:q2py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.R}
+  \lstinputlisting[frame=single,caption={Python script to track vocabulary growth},label=lst:q2py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.py}
 
-The relationship between corpus size and vocabulary size was defined in our book as: \[ v = k * n^\beta \].
-
-To estimate the parameters for heaps law and plot the vocabulary growth, I used R's ggplot2 to create charts and the built in function non-linear least squares (nls).
+The relationship between corpus size and vocabulary size was defined in our book as: \[ v = k * n^\beta \]
+To estimate the parameters for heaps law and plot the vocabulary growth, I used R's ggplot2 to create charts and the built in function non-linear least squares (nls) as shown in Figure \ref{lst:q2r}.
 The parameters of K and B were initialized with a value of one. 
 The plot of documents traversed in order is shown in Figure \ref{fig:q2p1} and the plot of the documents traversed in reverse is shown in Figure \ref{fig:q2p2}.
 The plots show vocab count along the y-axis and corpus word count along x-axis.
@@ -153,6 +152,8 @@ It is apparent that these two graphs are different and that means the order in w
 
 The estimation parameters for Heap's law for in order and reverse, computed by the nls method in R, are shown in Table \ref{table:heap}. 
 Some of values do differ slightly, such as the B values for ascending and descending, but there is an apparent difference which further supporting my claim.
+
+  \lstinputlisting[frame=single,caption={R script to compute Heap's Law},label=lst:q2r,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.R}
 
 \begin{table}
 \centering
@@ -194,12 +195,146 @@ Some of values do differ slightly, such as the B values for ascending and descen
 \subsection*{Question}
 
 \begin{verbatim}
-
+4.3. Try to estimate the number of web pages indexed by two 
+different search engines using the technique described in 
+this chapter. Compare the size estimates from a range of 
+queries and discuss the consistency (or lack of it) of these estimates.
 \end{verbatim}
 
 \subsection*{Answer}
 
+The technique described in the textbook \cite{} is described as follows:
 
+\begin{equation}\label{eq:est}
+  f_{ab} = N \cdot f_a/N \cdot f_b/N = (f_a \cdot f_b)/N
+\end{equation}
+
+Where:\\
+$N$ is the number of documents in the collection.\\
+$f_i$ is the number of document that term $i$ occurs.\\
+$f_{ab}$ is the combined set result.\\
+
+To estimate $N$ we can use the following equation:
+\begin{equation}
+	N = \frac{(f_a \cdot f_b)}{f_{ab}}
+\end{equation}
+
+The search engines I decided to use in this problem are google and bing. 
+My query term for both search engines was ``ocean grove.''
+For Google, my variables $f_{a}$, $f_{b}$, and $f_{ab}$ are described as follows:
+
+\begin{equation*}
+	f_{ocean} = 1,240,000,000
+\end{equation*}
+
+\begin{equation*}
+	f_{grove} = 379,000,000
+\end{equation*}
+
+\begin{equation*}
+	f_{ocean\ grove} = 7,900,000
+\end{equation*}
+
+These are shown in Figures \ref{fig:q3g1}, \ref{fig:q3g2}, and \ref{fig:q3g3} respectively. To estimate $N$ we use the following formula:
+
+\begin{equation*}
+	N = \frac{(1,240,000,000 \cdot 379,000,000)}{7,900,000}
+\end{equation*}
+
+\begin{equation*}
+	N = 59.5 \ billion
+\end{equation*}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{google1.png}
+\caption{Google ocean query}
+\label{fig:q3g1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{google2.png}
+\caption{Google grove query}
+\label{fig:q3g2}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{google3.png}
+\caption{Google ocean grove query}
+\label{fig:q3g3}
+\end{figure}
+
+\clearpage
+
+Comparing this estimation value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3gwww}, its an approximately 59.5/47.2 or 
+1.26:1 ratio.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{googlewww.png}
+\caption{Google's webpage size}
+\label{fig:q3gwww}
+\end{figure}
+
+For Bing, my variables $f_{a}$, $f_{b}$, and $f_{ab}$ are described as follows:
+
+\begin{equation*}
+	f_{ocean} = 183,000,000
+\end{equation*}
+
+\begin{equation*}
+	f_{grove} = 90,900,000
+\end{equation*}
+
+\begin{equation*}
+	f_{ocean\ grove} = 296,000
+\end{equation*}
+
+These are shown in Figures \ref{fig:q3b1}, \ref{fig:q3b2}, and \ref{fig:q3b3} respectively. To estimate $N$ we use the following formula:
+
+\begin{equation*}
+	N = \frac{(183,000,000 \cdot 90,900,000)}{296,000}
+\end{equation*}
+
+\begin{equation*}
+	N =  56.2 \ billion
+\end{equation*}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{bing1.png}
+\caption{Bing ocean query}
+\label{fig:q3b1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{bing2.png}
+\caption{Bing grove query}
+\label{fig:q3b2}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{bing3.png}
+\caption{Bing ocean grove query}
+\label{fig:q3b3}
+\end{figure}
+
+
+Comparing this estimation value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3bwww}, its an approximately 56.2/6 or 
+9.37:1 ratio. 
+This is a huge difference compared to google.  
+It clearly shows that Bing isn't putting as much resources into their search engine as google is.
+  
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{bingwww.png}
+\caption{Bing's webpage size}
+\label{fig:q3bwww}
+\end{figure}
 
 \clearpage
 

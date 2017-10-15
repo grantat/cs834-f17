@@ -15,7 +15,9 @@ values for the parameter c for each curve?
 for Heaps’ law. Should the order in which the documents are processed
 make any difference?
 
-> 
+> 4.3. Try to estimate the number of web pages indexed by two different search engines
+using the technique described in this chapter. Compare the size estimates
+from a range of queries and discuss the consistency (or lack of it) of these estimates.
 
 ### Presentation due 2017-10-12:
 
