@@ -81,11 +81,6 @@ For unigrams the best \textit{C} parameter was 0.14, while for bigrams it was 0.
  
   \lstinputlisting[frame=single,caption={Python script to tokenize and find frequencies and calculate C parameters},label=lst:q1R,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/rankFreq.R}
 
-%Finally when completing Enterprise search it should be noted that I don't have access to an intranet but I do have access to my own personal machine to conduct searches on my own file system.
-%I used my operating system's implemented search in it file system and I also use the terminal command \textit{grep} to show a customized search on a subset of directories.
-%Using my operating systems \textit{finder} program it searches across my entire computer of files with the words ``cs834-f17'' as shown in Figure \ref{fig:esearch1}. This type of seems more relatable to web search as it seem to generalize the results showing files that mention this term, but not every single file in my filesystem.
-%When I used the \textit{grep} command searching any directories starting with ``cs'' it showed every occurrence where ``cs834-f17'' was used. This is more relatable to site search because it listed all locations of occurrence in these directories.
-
   \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{unigram_10.png}
@@ -133,14 +128,60 @@ For unigrams the best \textit{C} parameter was 0.14, while for bigrams it was 0.
 \subsection*{Question}
 
 \begin{verbatim}
-1.4 	List five web services or sites that you use that appear to use search,
-not including web search engines. Describe the role of search for that
-service. Also describe the search is based on a database or grep style
-of matching, or if the search is using some type of ranking.
+4.2. Plot vocabulary growth for the Wikipedia collection and estimate 
+the parameters for Heaps' law. Should the order in which the 
+documents are processed make any difference?
 \end{verbatim}
 
 \subsection*{Answer}
 
+To answer this question I again created two files, \textbf{vocabGrowth.py} and \textbf{vocabGrowth.R}.
+My python script use the Beautifulsoup library to parse out the html documents of the small wikipedia example.
+Much like my answer to the first question I traversed the html documents in order and then in reverse, each time tokenizing the text of html, taking an overall corpus count, and tracking unique vocabulary through each of the html documents. 
+The code for this is shown in Listing \ref{lst:q2py}.
+The goal of this was simply see how the unique vocabulary list grows while the corpus size continues to grow.
+
+  \lstinputlisting[frame=single,caption={Python script to tokenize and find frequencies and calculate C parameters},label=lst:q2py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.R}
+
+The relationship between corpus size and vocabulary size was defined in our book as: \[ v = k * n^\beta \].
+
+To estimate the parameters for heaps law and plot the vocabulary growth, I used R's ggplot2 to create charts and the built in function non-linear least squares (nls).
+The parameters of K and B were initialized with a value of one. 
+The plot of documents traversed in order is shown in Figure \ref{fig:q2p1} and the plot of the documents traversed in reverse is shown in Figure \ref{fig:q2p2}.
+The plots show vocab count along the y-axis and corpus word count along x-axis.
+It is apparent that these two graphs are different and that means the order in which the documents are processed does make a difference.
+
+The estimation parameters for Heap's law for in order and reverse, computed by the nls method in R, are shown in Table \ref{table:heap}. 
+Some of values do differ slightly, such as the B values for ascending and descending, but there is an apparent difference which further supporting my claim.
+
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Number}} & \multicolumn{1}{c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Values}} \\ \hline
+1 & Document Count & 6043 \\ \hline
+2 & K ascending & 7.6679986 \\ \hline
+3 & B ascending & 0.6652129 \\ \hline
+4 & K descending & 6.276427 \\ \hline
+5 & B descending & 0.678342 \\ \hline
+\end{tabular}
+\caption{Heap's Law parameters for Small Wiki}
+\label{table:heap}
+\end{table}
+
+   \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{corpusGrowth.pdf}
+  \caption{Growth of vocabulary vs overall corpus}
+  \label{fig:q2p1}
+  \end{figure}
+  
+   \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{corpusGrowthReverse.pdf}
+  \caption{Growth of vocabulary vs overall corpus with documents traversed in reverse}
+  \label{fig:q2p2}
+  \end{figure}
 
 \clearpage
 
@@ -153,13 +194,7 @@ of matching, or if the search is using some type of ranking.
 \subsection*{Question}
 
 \begin{verbatim}
-3.7 	Write a program that can create a valid sitemap based on the
-contents of a directory on your computer's hard disk. Assume
-the file are accessible from a website at the URL http://example.com.
-For instance, if there is a file in your directory called homework.pdf,
-this would be available at http://www.example.com/homework.pdf.
-Use the real modification date on the file as the last modified time in the
-sitemap, and to help estimate the change frequency.
+
 \end{verbatim}
 
 \subsection*{Answer}
@@ -177,9 +212,7 @@ sitemap, and to help estimate the change frequency.
 \subsection*{Question}
 
 \begin{verbatim}
-Suppose that, in an effort to crawl web pages faster, you set up
-two crawling machines with different starting seed URIs. Is this
-an effective strategy for distributed crawling? Why or why not.
+
 \end{verbatim}
 
 \subsection*{Answer}
@@ -196,11 +229,7 @@ an effective strategy for distributed crawling? Why or why not.
 \subsection*{Question}
 
 \begin{verbatim}
-3.9 	Write a simple single-threaded web crawler. Starting from a single input
-URL (perhaps a professor's web page), the crawler should download a
-page and then wait at least five seconds before downloading the next
-page. Your program should find other pages to crawl by parsing link
-tags found in previously crawled documents.
+
 \end{verbatim}
 
 \subsection*{Answer}

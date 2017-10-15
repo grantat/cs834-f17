@@ -15,6 +15,8 @@ values for the parameter c for each curve?
 for Heaps’ law. Should the order in which the documents are processed
 make any difference?
 
+> 
+
 ### Presentation due 2017-10-12:
 
 Any research paper in “references and further reading” from chapters 4 or 5
