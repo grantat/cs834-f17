@@ -19,6 +19,22 @@ make any difference?
 using the technique described in this chapter. Compare the size estimates
 from a range of queries and discuss the consistency (or lack of it) of these estimates.
 
+> 4.8. Find the 10 Wikipedia documents with the most inlinks. Show the collection
+of anchor text for those pages.
+
+> 5.8. Write a program that can build a simple inverted index of a set of text documents.
+Each inverted list will contain the file names of the documents that contain
+that word.
+Suppose the file A contains the text “the quick brown fox”, and file B contains
+“the slow blue fox”. The output of your program would be:
+% ./your-program A B
+blue B
+brown A
+fox A B
+quick A
+slow B
+the A B
+
 ### Presentation due 2017-10-12:
 
 Any research paper in “references and further reading” from chapters 4 or 5

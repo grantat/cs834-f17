@@ -153,7 +153,7 @@ It is apparent that these two graphs are different and that means the order in w
 The estimation parameters for Heap's law for in order and reverse, computed by the nls method in R, are shown in Table \ref{table:heap}. 
 Some of values do differ slightly, such as the B values for ascending and descending, but there is an apparent difference which further supporting my claim.
 
-  \lstinputlisting[frame=single,caption={R script to compute Heap's Law},label=lst:q2r,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.R}
+\lstinputlisting[frame=single,caption={R script to compute Heap's Law},label=lst:q2r,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/vocabGrowth.R}
 
 \begin{table}
 \centering
@@ -203,7 +203,7 @@ queries and discuss the consistency (or lack of it) of these estimates.
 
 \subsection*{Answer}
 
-The technique described in the textbook \cite{} is described as follows:
+The technique described in the textbook \cite{book} is described as follows:
 
 \begin{equation}\label{eq:est}
   f_{ab} = N \cdot f_a/N \cdot f_b/N = (f_a \cdot f_b)/N
@@ -268,7 +268,7 @@ These are shown in Figures \ref{fig:q3g1}, \ref{fig:q3g2}, and \ref{fig:q3g3} re
 
 \clearpage
 
-Comparing this estimation value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3gwww}, its an approximately 59.5/47.2 or 
+Comparing this estimated index value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3gwww}, its an approximately 59.5/47.2 or 
 1.26:1 ratio.
 
 \begin{figure}[h]
@@ -324,7 +324,7 @@ These are shown in Figures \ref{fig:q3b1}, \ref{fig:q3b2}, and \ref{fig:q3b3} re
 \end{figure}
 
 
-Comparing this estimation value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3bwww}, its an approximately 56.2/6 or 
+Comparing this estimated index value to what is shown on the \url{http://www.worldwidewebsize.com/}, as shown in Figure \ref{fig:q3bwww}, its an approximately 56.2/6 or 
 9.37:1 ratio. 
 This is a huge difference compared to google.  
 It clearly shows that Bing isn't putting as much resources into their search engine as google is.
@@ -347,11 +347,41 @@ It clearly shows that Bing isn't putting as much resources into their search eng
 \subsection*{Question}
 
 \begin{verbatim}
-
+4.8. Find the 10 Wikipedia documents with the most inlinks. 
+Show the collection of anchor text for those pages.
 \end{verbatim}
 
 \subsection*{Answer}
 
+To answer this question I wrote a script named \textbf{inlinks.py} as shown in Listing \ref{lst:q4py}.
+This script once again takes advantage of Beautifulsoup to parse html, but this time I also used it to extract all the ``a'' element tags with href tags.
+For each of the URIs found I would create a dictionary with their destination and their anchor text to the html element.
+The results of this is shown below in Table \ref{table:inlink}.
+This data is also present on my github page called \textbf{inlinks.csv} in the data directory \cite{github}.
+You should probably go to the github, because I can't format my tables properly.
+
+\clearpage
+
+\begin{table}
+\begin{tabular}{| l | l | l |}
+\hline
+\multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{c|}{\textbf{Inlink Count}} & \multicolumn{1}{c|}{\textbf{Anchor Text}}  \\ \hline
+Brazil.html &124 & BRA, Brazil, Article, Brazilian \\ \hline
+Foreign\_hostages\_in\_Iraq\_9250.html & 118 & edit, Article \\ \hline
+List\_of\_birds\_of\_the\_United\_Arab\_Emirates\_67ef.html & 66 & edit, Article \\ \hline
+2007\_New\_York\_Jets\_season\_b663.html & 64 & article, edit, 2007 \\ \hline
+German\_railway\_signalling.html & 53 & edit, Article \\ \hline
+August\_26.html & 50 & 08-26, 26 August 26, August 26, edit, Article \\ \hline
+IPv6\_fdb7.html & 50 & edit, Article \\ \hline
+Symmetry.html & 45 & edit, Article \\ \hline
+List\_of\_important\_publications\_in\_geology.html & 44 & edit, Article \\ \hline
+List\_of\_units\_using\_the\_B-26\_Marauder\_during\_World\_War\_II\_9296.html & 41 & edit, Article \\ \hline
+\end{tabular}
+\caption{Heap's Law parameters for Small Wiki}
+\label{table:inlink}
+\end{table}
+
+\lstinputlisting[frame=single,caption={Python script to find top 10 inlinks in small Wiki dataset},label=lst:q4py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/inlinks.py}
 
 \clearpage
 
@@ -364,11 +394,29 @@ It clearly shows that Bing isn't putting as much resources into their search eng
 \subsection*{Question}
 
 \begin{verbatim}
+5.8. Write a program that can build a simple inverted 
+index of a set of text documents. Each inverted list
+will contain the file names of the documents that contain
+that word.
+Suppose the file A contains the text ``the quick brown fox'', 
+and file B contains ``the slow blue fox''. The output of
+ your program would be:
 
+\% ./your-program A B
+blue B
+brown A
+fox A B
+quick A
+slow B
+the A B
 \end{verbatim}
 
 \subsection*{Answer}
 
+Having done something very similar before for extra in CS532 \cite{cs532}, I decided to reuse some old code I found on a website called Rosetta Code \cite{invertedindexref}.
+This code basically is a simple way to create an inverted index.
+
+\lstinputlisting[frame=single,caption={Python script to find top 10 inlinks in small Wiki dataset},label=lst:q4py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/inlinks.py}
 
 \clearpage
 
@@ -378,10 +426,14 @@ It clearly shows that Bing isn't putting as much resources into their search eng
 % =================================
 
 \begin{thebibliography}{9}
+\bibitem{invertedindexref}
+``Inverted Index.'' Roseta Code Inverted index. N.p.,n.d. Web. 22 Feb. 2017. \url{http://rosettacode.org/wiki/Inverted_index#Simple_inverted_index}
 \bibitem{cs532}
-Atkins, Grant. ``CS532 Assignment 1 Repository'' Github. N.p., 23 March 2017. Web. 23 March 2017.\url{https://github.com/grantat/cs532-s17/tree/master/assignments/A1/src}.
+Atkins, Grant. ``CS532 Assignment 3 Repository'' Github. N.p., 23 March 2017. Web. 23 March 2017.\url{https://github.com/grantat/cs532-s17/tree/master/assignments/A3/src}.
 \bibitem{github}
-Atkins, Grant. ``CS734 Assignment 2 Repository'' Github. N.p., 21 September 2017. Web. 21 September 2017.\url{https://github.com/grantat/cs834-f17/tree/master/assignments/A2}.
+Atkins, Grant. ``CS734 Assignment 2 Repository'' Github. N.p., 21 September 2017. Web. 14 October 2017.\url{https://github.com/grantat/cs834-f17/tree/master/assignments/A2}.
+\bibitem{book}
+B. Croft, D. Metzler, and T. Strohman. ``Search Engines: Information Retrieval in Practice.'' Pearson, 2009. Web. 14 October 2017. ISBN 9780136072249.
 \end{thebibliography}
 
 \end{document}
