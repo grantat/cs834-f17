@@ -8,37 +8,66 @@ import sys
 
 def buildIndex(file_list):
     index = {}
-    vocab = set()
-    
+    full_vocab = set()
     for i, f in enumerate(file_list):
-        tokens = []
         html = open(f, 'r')
         soup = BeautifulSoup(html.read(), 'html.parser')
         text = soup.get_text()
+        vocab = set()
 
         for word in text.split():
             if word.isalpha():
-                tokens.append(word)
+                word = word.lower()
                 if word not in vocab:
                     vocab.add(word)
 
+        full_vocab = full_vocab.union(vocab)
+        fname = f
+        # if no path separator leave as is
+        try:
+            fname = f.rsplit("/", 1)[1]
+        except:
+            fname = f
+        # assign words set of words to filename
+        index[fname] = vocab
 
-    return vocab_corpus_counts
+    return index, full_vocab
 
 
-def write_csv(filename, corpus_growth):
+def invertIndex(index, full_vocab):
+    newIndex = {}
+    for w in full_vocab:
+        files = []
+        for f, words in index.items():
+            if w in words:
+                files.append(f)
+
+        # pick out unique files
+        newIndex[w] = sorted(set(files))
+
+    d = []
+    for w in newIndex:
+        d.append([w, u', '.join(newIndex[w])])
+
+    return d
+
+
+def write_csv(filename, index):
     with open("./data/" + filename, 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(["doc_number", "word", "documents"])
-        writer.writerows(corpus_growth)
+        writer.writerow(["word", "documents"])
+        writer.writerows(index)
 
 
 if __name__ == "__main__":
+    # testing with wiki data
+    # python3 invertedIndex.py ./data/en/articles/2/0/0/2006_Purdue_Boilermakers_football_team_41f1.html ./data/en/articles/2/0/0/2007-08_Georgetown_Hoyas_men\'s_basketball_team_a8f4.html
     filenames = []
     for arg in range(1, len(sys.argv)):
         filenames.append(sys.argv[arg])
 
     # get all html files
-    invertedIndex = buildIndex(filenames)
+    index, full_vocab = buildIndex(filenames)
+    invertedIndex = invertIndex(index, full_vocab)
 
     write_csv("invertedIndex.csv", invertedIndex)

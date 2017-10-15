@@ -368,14 +368,14 @@ You should probably go to the github, because I can't format my tables properly.
 \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{c|}{\textbf{Inlink Count}} & \multicolumn{1}{c|}{\textbf{Anchor Text}}  \\ \hline
 Brazil.html &124 & BRA, Brazil, Article, Brazilian \\ \hline
 Foreign\_hostages\_in\_Iraq\_9250.html & 118 & edit, Article \\ \hline
-List\_of\_birds\_of\_the\_United\_Arab\_Emirates\_67ef.html & 66 & edit, Article \\ \hline
+List\_of\_birds\_of\_the\_United \\ \_Arab\_Emirates\_67ef.html & 66 & edit, Article \\ \hline
 2007\_New\_York\_Jets\_season\_b663.html & 64 & article, edit, 2007 \\ \hline
 German\_railway\_signalling.html & 53 & edit, Article \\ \hline
 August\_26.html & 50 & 08-26, 26 August 26, August 26, edit, Article \\ \hline
 IPv6\_fdb7.html & 50 & edit, Article \\ \hline
 Symmetry.html & 45 & edit, Article \\ \hline
-List\_of\_important\_publications\_in\_geology.html & 44 & edit, Article \\ \hline
-List\_of\_units\_using\_the\_B-26\_Marauder\_during\_World\_War\_II\_9296.html & 41 & edit, Article \\ \hline
+List\_of\_important\_publications \\ \_in\_geology.html & 44 & edit, Article \\ \hline
+List\_of\_units\_using\_the\_B-26\_Marauder \\ \_during\_World\_War\_II\_9296.html & 41 & edit, Article \\ \hline
 \end{tabular}
 \caption{Heap's Law parameters for Small Wiki}
 \label{table:inlink}
@@ -413,8 +413,21 @@ the A B
 
 \subsection*{Answer}
 
-Having done something very similar before for extra in CS532 \cite{cs532}, I decided to reuse some old code I found on a website called Rosetta Code \cite{invertedindexref}.
+Having done something very similar before for extra in CS532 \cite{cs532}, I decided to lookup some old code I found on a website called Rosetta Code \cite{invertedindexref}.
 This code basically is a simple way to create an inverted index.
+You first tokenize each html document you call on the command line and build a dictionary of files whose attributes are unique terms and tracking all the unique terms.
+You can then iterate through the unique terms and map each file that has the term in the term's dictionary. 
+In essence this is an inverted index.
+It should be noted that instead of writing to the command prompt the answers, I decided to write it to a CSV file because many documents created many terms.
+This CSV can be found in my repository in the data directory \cite{github}.
+An example run can be shown in Figure \ref{fig:invertIndex} below, first running the program, then print the top 10 lines of the CSV file.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{invertedIndexOutput.png}
+\caption{Inverted Index sample run with CSV top 10 items}
+\label{fig:invertIndex}
+\end{figure}
 
 \lstinputlisting[frame=single,caption={Python script to build inverted index from list of files},label=lst:q4py,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/invertedIndex.py}
 
