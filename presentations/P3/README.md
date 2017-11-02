@@ -10,16 +10,16 @@
 
 
 
-### Notes from Rank-preserving two-level caching for scalable search engines
+### Notes from LDA-based document models for ad-hoc retrieval
 
+Bag of words - document is represented by the words inside of it
 
-
-### Notes from Performance of compressed inverted list caching in search engines
+### Notes from Topical N-Grams: Phrase and Topic Discovery, with an Application to Information Retrieval
 
 
 
 ### Presentation notes
 
-Link to Google presentation [here](#).
+Link to Google presentation [here](https://docs.google.com/presentation/d/1Bbn591xGmz5HjdhAnCN9nJSdh7xgADJj2FdLCigPSSM/edit?usp=sharing).
 
 ### Feedback after presenting
