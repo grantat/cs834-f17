@@ -52,18 +52,75 @@
 \subsection*{Question}
 
 \begin{verbatim}
+6.1. Using the Wikipedia collection provided at the book website, create 
+a sample of stem clusters by the following process:
+    1. Index the collection without stemming.
+    2. Identify the first 1,000 words (in alphabetical order) in the index.
+    3. Create stem classes by stemming these 1,000 words and recording 
+    which words become the same stem.
+    4. Compute association measures (Dice?s coefficient) between all 
+    pairs of stems in each stem class. Compute co-occurrence at the 
+    document level.
+    5. Create stem clusters by thresholding the association measure. 
+    All terms that are still connected to each other form the clusters.
 
+Compare the stem clusters to the stem classes in terms of size and the 
+quality (in your opinion) of the groupings.
 \end{verbatim}
 
 \subsection*{Answer}
 
+For this problem as well as other problems that used Galago it should be noted that I used Galago version 3.12 \cite{galago}. 
+I also used the wiki-small html files as the input for the Galago search engine.
+
+To handle the first two parts of this problem I decided to take advantage of the Galago search engine for indexing and sorting the index created by it.
+I then used galago to dump the unique keys from its inverted index using the following command: 
+
+\begin{center}
+{\$ galago dump-keys index/postings $>$ dump-keys.csv }
+\end{center}
+
+Galago creates an inverted index and it should be noted that from the keys dumped there were sequences of different characters but not all of them were actually words but rather numbers or misspellings. 
+To compensate for this I used a python library called Pyenchant \cite{pyenchant} to go through each and see if the the words were actually english and spelled correctly.
+The code to complete this is in \textbf{spellcheck.py} shown in Listing \ref{lst:spellcheck}. 
+This however still had numbers inside of it. 
+To get to the english words starting with the letter `a` I skipped to line 8578 and took the next 1000 words saved this to a file named \textbf{top-1k-words.txt}.
+ 
+ \lstinputlisting[frame=single,caption={Spellcheck code in python},label=lst:spellcheck,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/spellcheck.py}
+
+To stem each of the words in my list I used the NLTK python library \cite{nltk} and specifically the PorterStemmer function to stem each word.
+I made a dictionary where each stem was a key and the stems then had an array of words that fell into that stem class and saved this to a json file named \textbf{stems.json}.
+A small sample of this is shown in Figure \ref{fig:stemspic}.
+I then used Galago again to find the document ids where the words had been used using the following Galago command:
+
+\begin{center}
+{\$ galago dump-index index/postings $>$ dump.csv }
+\end{center}
+
+I then merged the previous dictionary with the document ids found in this step so I could use it to find the co-occurrence and Dice's Coefficient as described below. 
+The code to perform these steps is in the file named \textbf{stemmer.py}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{sitesearch.png}
-\caption{Site search example in google}
-\label{fig:sitesearch}
+\includegraphics[scale=0.6]{stems.png}
+\caption{Subset of stems generated from Porter Stemmer}
+\label{fig:stemspic}
 \end{figure}
+
+Dice's Coefficient is described in our textbook \cite{book} as:
+
+\[
+    \frac{n_{ab}}{n_a+n_b}
+\]
+
+To compute Dice's Coefficient 
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[scale=0.4]{sitesearch.png}
+%\caption{Site search example in google}
+%\label{fig:sitesearch}
+%\end{figure}
 
 
 \clearpage
@@ -100,7 +157,7 @@
 
 \subsection*{Answer}
 
- \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
+% \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
 
 \clearpage
 
@@ -149,14 +206,16 @@
 % =================================
 
 \begin{thebibliography}{9}
-\bibitem{cs532}
-Atkins, Grant. ``CS532 Assignment 1 Repository'' Github. N.p., 23 March 2017. Web. 23 March 2017.\url{https://github.com/grantat/cs532-s17/tree/master/assignments/A1/src}.
 \bibitem{github}
-Atkins, Grant. ``CS734 Assignment 2 Repository'' Github. N.p., 21 September 2017. Web. 21 September 2017.\url{https://github.com/grantat/cs834-f17/tree/master/assignments/A2}.
-\bibitem{googlesite}
-Boswell, Weny. ``Advanced Google Search Shortcuts'' Lifewire. N.p., 2 July 2017. Web. \url{https://www.lifewire.com/advanced-google-search-3482174}
-\bibitem{irlbot}
-Hsin-Tsang Lee, Derek Leonard, Xiaoming Wang, and Dmitri Loguinov. 2009. ``IRLbot: Scaling to 6 billion pages and beyond.'' ACM Trans. Web 3, 3, Article 8 (July 2009), 34 pages. \url{http://dx.doi.org.proxy.lib.odu.edu/10.1145/1541822.1541823}.
+Atkins, Grant. ``CS734 Assignment 3 Repository'' Github. N.p., 9 November 2017. Web. 9 November 2017.\url{https://github.com/grantat/cs834-f17/tree/master/assignments/A3}.
+\bibitem{book}
+B. Croft, D. Metzler, and T. Strohman. ``Search Engines: Information Retrieval in Practice.'' Pearson, 2009. Web. 14 October 2017. ISBN 9780136072249.
+\bibitem{nltk}
+Bird, Steven, Edward Loper and Ewan Klein (2009). ``Natural Language Processing with Python`` O?Reilly Media Inc. Web. 9 November 2017.\url{http://www.nltk.org/}.
+\bibitem{galago}
+``The Lemur Project - Galago''. Web. 9 November 2017. \url{https://sourceforge.net/p/lemur/wiki/Galago/}.
+\bibitem{pyenchant}
+``Pyenchant''. Web. 9 November 2017. \url{http://pythonhosted.org/pyenchant/}.
 \end{thebibliography}
 
 \end{document}

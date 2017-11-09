@@ -16,3 +16,6 @@ __MACOSX
 
 # ignore html A2
 en/
+
+# virtual environment
+venv/

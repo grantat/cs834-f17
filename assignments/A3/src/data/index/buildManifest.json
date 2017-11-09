@@ -1,0 +1,43 @@
+{
+  "corpus" : true,
+  "corpusParameters" : {
+    "blockSize" : 512,
+    "filename" : "/Users/gatkins/cs834-f17/assignments/A3/src/data/index/corpus",
+    "mergerClass" : "org.lemurproject.galago.core.index.merge.CorpusMerger",
+    "readerClass" : "org.lemurproject.galago.core.index.corpus.CorpusReader",
+    "tokenizer" : {
+      "fields" : [ ],
+      "formats" : {
+
+      }
+    },
+    "writerClass" : "org.lemurproject.galago.core.index.corpus.CorpusFolderWriter"
+  },
+  "fieldIndex" : false,
+  "fieldIndexParameters" : {
+    "nonStemmedPostings" : true,
+    "stemmedPostings" : true,
+    "stemmer" : [ "krovetz"]
+  },
+  "filetype" : "html",
+  "galagoVersion" : "3.12",
+  "galagoVersionBuildDateTime" : "2017-06-22 16:30",
+  "indexBuildDateTime" : "2017-11-09 02:05",
+  "indexPath" : "/Users/gatkins/cs834-f17/assignments/A3/src/data/index",
+  "inputPath" : [ "/Users/gatkins/cs834-f17/assignments/A3/src/data/en/articles"],
+  "nonStemmedPostings" : true,
+  "skipDistance" : 500,
+  "skipping" : true,
+  "stemmedCounts" : false,
+  "stemmedPostings" : true,
+  "stemmer" : [ "krovetz"],
+  "stemmerClass" : {
+    "krovetz" : "org.lemurproject.galago.core.parse.stem.KrovetzStemmer"
+  },
+  "tokenizer" : {
+    "fields" : [ ],
+    "formats" : {
+
+    }
+  }
+}
