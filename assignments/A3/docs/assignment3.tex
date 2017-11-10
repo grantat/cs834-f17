@@ -35,7 +35,7 @@
 
 \Large{Grant Atkins}
 
-\Large Finished on \today
+\Large Finished on November 9, 2017
 
 \end{center}
 
@@ -255,62 +255,6 @@ This algorithm also has an update policy to the cache for frequent queries.
 \subsection*{Question}
 
 \begin{verbatim}
-7.7. What is the ``bucket'' analogy for a bigram language model?
-Give examples.
-\end{verbatim}
-
-\subsection*{Answer}
-
-In the bigram language model the ``bucket'' analogy is very similar to the analogy as unigrams as well.
-In the unigram model the analogy of the ``bucket'' is the idea of reaching into an bucket of words for a document, reading off a word, and then putting it back in the bucket.
-Its probabilistic that words with a high frequency or are important will be drawn more often than others.
-
-The bigram model is very similar except for the fact that it retrieves two word pairs from a bucket which represents a document.
-The two word pairs are words that are adjacent to one another in a document, therefore providing ordering of words.
-These bigrams also provide more context than a unigram model since they provide this ordering. 
-For example, the sentence ``North Carolina citizens wants to outlast the storm'' would be create the following list in a unigram language model:
-
-\begin{itemize}
-  \item ``North''
-  \item ``Carolina''
-  \item ``citizens''
-  \item ``wants''
-  \item ``outlast''
-  \item ``storm''
-\end{itemize}
-
-This has all of the stop word removed but these words become representative of the document that are in.
-In the bigram language model the following list would be created from the previous list:
-
-\begin{itemize}
-  \item ``North Carolina''
-  \item ``Carolina citizens''
-  \item ``citizens wants''
-  \item ``wants outlast''
-  \item ``outlast storm''
-\end{itemize}
-
-If a user picks out the word ``North'' from the unigram bucket it proves to be a very ambiguous word.
-However, if we pick out the first bigram which contains ``North'' it becomes ``North Carolina.''
-This brings a lot more context as well shows connections between words.
-The frequency of the these word pairs will prove to be a better representative of the document than that of the unigrams.
-This also shows that the second word of the bigrams are dependent on the first word.
-As the occurrences of bigrams starting with ``North'' increase whichever second word for the bigram starts to become more representative for the distribution.
-So if there are two ``North Carolina'' occurrences its apparent that this has more weight over one ``North Virginia'' occurrence to represent a document.
-
-% \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
-
-\clearpage
-
-% =================================
-% 4th question
-% =================================
-
-\section*{4}
-
-\subsection*{Question}
-
-\begin{verbatim}
 6.5. Describe the snippet generation algorithm in Galago. 
 Would this algorithm work well for pages with little text 
 content? Describe in detail how you would modify the 
@@ -362,6 +306,64 @@ So in this case they chose speed over appearances in some cases which is a fair 
 
 \clearpage
 
+
+% =================================
+% 4th question
+% =================================
+
+\section*{4}
+
+\subsection*{Question}
+
+\begin{verbatim}
+7.7. What is the ``bucket'' analogy for a bigram language model?
+Give examples.
+\end{verbatim}
+
+\subsection*{Answer}
+
+In the bigram language model the ``bucket'' analogy is very similar to the analogy as unigrams as well.
+In the unigram model the analogy of the ``bucket'' is the idea of reaching into an bucket of words for a document, reading off a word, and then putting it back in the bucket.
+Its probabilistic that words with a high frequency or are important will be drawn more often than others.
+
+The bigram model is very similar except for the fact that it retrieves two word pairs from a bucket which represents a document.
+The two word pairs are words that are adjacent to one another in a document, therefore providing ordering of words.
+These bigrams also provide more context than a unigram model since they provide this ordering. 
+For example, the sentence ``North Carolina citizens wants to outlast the storm'' would be create the following list in a unigram language model:
+
+\begin{itemize}
+  \item ``North''
+  \item ``Carolina''
+  \item ``citizens''
+  \item ``wants''
+  \item ``outlast''
+  \item ``storm''
+\end{itemize}
+
+This has all of the stop word removed but these words become representative of the document that are in.
+In the bigram language model the following list would be created from the previous list:
+
+\begin{itemize}
+  \item ``North Carolina''
+  \item ``Carolina citizens''
+  \item ``citizens wants''
+  \item ``wants outlast''
+  \item ``outlast storm''
+\end{itemize}
+
+If a user picks out the word ``North'' from the unigram bucket it proves to be a very ambiguous word.
+However, if we pick out the first bigram which contains ``North'' it becomes ``North Carolina.''
+This brings a lot more context as well shows connections between words.
+The frequency of the these word pairs will prove to be a better representative of the document than that of the unigrams.
+This also shows that the second word of the bigrams are dependent on the first word.
+As the occurrences of bigrams starting with ``North'' increase whichever second word for the bigram starts to become more representative for the distribution.
+So if there are two ``North Carolina'' occurrences its apparent that this has more weight over one ``North Virginia'' occurrence to represent a document.
+
+% \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
+
+\clearpage
+
+
 % =================================
 % 5th question
 % =================================
@@ -371,17 +373,37 @@ So in this case they chose speed over appearances in some cases which is a fair 
 \subsection*{Question}
 
 \begin{verbatim}
-
+7.8. Using the Galago implementation of query likelihood,
+study the impact of short queries and long queries on 
+effectiveness. Do the parameter settings make a difference?
 \end{verbatim}
 
 \subsection*{Answer}
 
+After rummaging through the code for Galago 3.12 and reading the Galago wiki \cite{galago} I believe Galago uses a Dirichlet algorithm for query likelihood.
+One of the direct downfalls to this implementation is that if a query contains a term that is not present inside of a document it will consider the documents to have no relevance to the query regardless of the other terms in the query.
+The code for the Dirichlet scoring is show in Listing \ref{lst:dir}.
+
+\begin{lstlisting}[language=java, caption={Scoring Algorithm in DirichletScorer.java}, label={lst:dir}]
+  public double score(int count, int length) {
+    double numerator = count + (mu * background);
+    double denominator = length + mu;
+    return Math.log(numerator / denominator);
+  }
+\end{lstlisting}
+
+When comparing the impact of short queries versus long queries its better to say that the average query length performs the best.
+This is due to the fact that they contain enough terms to form a topic model to represent the query.
+If we took a query with one word, then there could be multiple topics with which represent that word and the topic that has the highest probability for that word would be favored highly when it might not be the topic we were hoping for.
+For long queries its not that different.
+If a query contains many words then there could be noise in the selection of the best topic.
+If all words have a high probability for a different topic it will be difficult to take into account who to select for the best result.
+
+I don't think the parameter settings would make a drastic difference unless made to create a drastic difference.
+Parameters won't have much influence on the size of a query input by a user.
+One of the ways it could help is that it could help match queries to the correct topics, however it shouldn't change the ordering of the results on a SERP.
 
 \clearpage
-
-
-\clearpage
-
 
 % =================================
 % Bibliography
