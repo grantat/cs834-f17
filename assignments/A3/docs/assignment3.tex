@@ -113,16 +113,33 @@ Dice's Coefficient is described in our textbook \cite{book} as:
     \frac{n_{ab}}{n_a+n_b}
 \]
 
-To compute Dice's Coefficient I used source code for the algorithm found en.wikibooks.org \cite{} and used the python version.
+To compute Dice's Coefficient I used source code for the algorithm found en.wikibooks.org \cite{wikibook} and used the python version.
 A subset of bigrams and their pair results of this are shown in Figure \ref{fig:dice}, saved in \textbf{dice.csv}.
 The first column is the stem, the two words following are the comparisons, and the last value is the Dice Coefficient. 
-The code used to create this is shown in Listing \ref{}, written in diceCluster.py.
+The code used to create this is shown in Listing \ref{lst:dc}, written in diceCluster.py.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{dice.png}
+\includegraphics[scale=0.6]{dice.png}
 \caption{Subset of stems, the bigram pairs, and the dice coefficients for each}
 \label{fig:dice}
+\end{figure}
+
+Dice clusters were then calculated using:
+
+\[
+    \frac{2 * {doc\_count_{ab}}}{doc\_count_a+doc\_count_b}
+\]
+
+The threshold I set was 0.1 and I got a relatively high number of clusters, 100 as shown with a subset show in Figure \ref{fig:dicec}.
+The difference is noticeable when comparing stem classes to stem clusters.
+The influence of document frequency shows that this changes the cluster associations greatly.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{dice-clusters.png}
+\caption{Subset of stems, the bigram pairs, and the dice coefficients for each}
+\label{fig:dicec}
 \end{figure}
 
  \lstinputlisting[frame=single,caption={Code to compute Dice coefficient and clusters directory},label=lst:dc,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/diceCluster.py}
@@ -302,6 +319,8 @@ Bird, Steven, Edward Loper and Ewan Klein (2009). ``Natural Language Processing 
 ``The Lemur Project - Galago''. Web. 9 November 2017. \url{https://sourceforge.net/p/lemur/wiki/Galago/}.
 \bibitem{pyenchant}
 ``Pyenchant''. Web. 9 November 2017. \url{http://pythonhosted.org/pyenchant/}.
+\bibitem{wikibook}
+``Wikibook - Dice's Coefficient''. Web. 9 November 2017. \url{https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient#Python}.
 \end{thebibliography}
 
 \end{document}
