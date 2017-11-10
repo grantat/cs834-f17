@@ -255,10 +255,48 @@ This algorithm also has an update policy to the cache for frequent queries.
 \subsection*{Question}
 
 \begin{verbatim}
-
+7.7. What is the ``bucket'' analogy for a bigram language model?
+Give examples.
 \end{verbatim}
 
 \subsection*{Answer}
+
+In the bigram language model the ``bucket'' analogy is very similar to the analogy as unigrams as well.
+In the unigram model the analogy of the ``bucket'' is the idea of reaching into an bucket of words for a document, reading off a word, and then putting it back in the bucket.
+Its probabilistic that words with a high frequency or are important will be drawn more often than others.
+
+The bigram model is very similar except for the fact that it retrieves two word pairs from a bucket which represents a document.
+The two word pairs are words that are adjacent to one another in a document, therefore providing ordering of words.
+These bigrams also provide more context than a unigram model since they provide this ordering. 
+For example, the sentence ``North Carolina citizens wants to outlast the storm'' would be create the following list in a unigram language model:
+
+\begin{itemize}
+  \item ``North''
+  \item ``Carolina''
+  \item ``citizens''
+  \item ``wants''
+  \item ``outlast''
+  \item ``storm''
+\end{itemize}
+
+This has all of the stop word removed but these words become representative of the document that are in.
+In the bigram language model the following list would be created from the previous list:
+
+\begin{itemize}
+  \item ``North Carolina''
+  \item ``Carolina citizens''
+  \item ``citizens wants''
+  \item ``wants outlast''
+  \item ``outlast storm''
+\end{itemize}
+
+If a user picks out the word ``North'' from the unigram bucket it proves to be a very ambiguous word.
+However, if we pick out the first bigram which contains ``North'' it becomes ``North Carolina.''
+This brings a lot more context as well shows connections between words.
+The frequency of the these word pairs will prove to be a better representative of the document than that of the unigrams.
+This also shows that the second word of the bigrams are dependent on the first word.
+As the occurrences of bigrams starting with ``North'' increase whichever second word for the bigram starts to become more representative for the distribution.
+So if there are two ``North Carolina'' occurrences its apparent that this has more weight over one ``North Virginia'' occurrence to represent a document.
 
 % \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
 
