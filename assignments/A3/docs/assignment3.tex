@@ -113,15 +113,19 @@ Dice's Coefficient is described in our textbook \cite{book} as:
     \frac{n_{ab}}{n_a+n_b}
 \]
 
-To compute Dice's Coefficient 
+To compute Dice's Coefficient I used source code for the algorithm found en.wikibooks.org \cite{} and used the python version.
+A subset of bigrams and their pair results of this are shown in Figure \ref{fig:dice}, saved in \textbf{dice.csv}.
+The first column is the stem, the two words following are the comparisons, and the last value is the Dice Coefficient. 
+The code used to create this is shown in Listing \ref{}, written in diceCluster.py.
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=0.4]{sitesearch.png}
-%\caption{Site search example in google}
-%\label{fig:sitesearch}
-%\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{dice.png}
+\caption{Subset of stems, the bigram pairs, and the dice coefficients for each}
+\label{fig:dice}
+\end{figure}
 
+ \lstinputlisting[frame=single,caption={Code to compute Dice coefficient and clusters directory},label=lst:dc,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/diceCluster.py}
 
 \clearpage
 
@@ -134,12 +138,94 @@ To compute Dice's Coefficient
 \subsection*{Question}
 
 \begin{verbatim}
-
+6.4. Assuming you had a gazetteer of place names available, 
+sketch out an algorithm for detecting place names or locations
+in queries. Show examples of the types of queries where your 
+algorithm would succeed and where it would fail.
 \end{verbatim}
 
 \subsection*{Answer}
 
+When thinking of an algorithm for detecting places names or locations in queries two very simple solutions come to mind right away.
+One is to tokenize the entire query and then search for each of the tokens directly in the index.
+This solution is of course a can be time consuming especially if the index is very large.
+Users never want to wait a long period of time because this method offers a slow solution.
 
+Another simple solution is to have a cache of popular locations.
+Whenever a query goes out it is again tokenized and then the terms can be searched inside a small cache to save time.
+This however also has its own caveats of not covering every possible solution and actually increases time if it hits the cache first and doesn't find the location, but then also has to hit the index.
+
+Another possible solution is to have predefined queries with modular variables in them.
+Some of the possible queries and their interchangeable variables are:
+
+\begin{itemize}
+  \item ``I went to Vegas this Summer.'' -$>$ ``I went to X this Summer.''
+  \item ``Washington and Virginia are almost the same.'' -$>$ ``X and Y are almost the same.''
+\end{itemize}
+
+These kinds of interchangeable queries could be stored procedures in a sense.
+This approach could also be used for bigrams since these are based on positions.
+This is a decent approach but there are many different ways to reference a location in a sentence therefore we can't contain cache of all the options.
+If we conform other queries to these predefined queries it can introduce more false positives.
+With this approach we also have to consider locations that aren't unigrams, such as ``North Carolina.''
+
+An example algorithm is to combine each of these concepts into a single algorithm which updates overtime depending on the queries incoming.
+The goal is to have an algorithm that can receive the advantages of these methods to increase query coverage, however there still might be locations that slip through each of these methods. My proposition is below in Listing \ref{lst:pseudo}.
+
+\begin{lstlisting}[language=python, caption={Pseudo code algorithm for Location detection in queries}, label={lst:pseudo}]
+
+// perform lookup for term - increment cache frequency regardless
+function cache_lookup(query):
+	if query in query_cache:
+		query_cache[query] += 1
+		return true
+	else
+		query_cache[query] += 1
+		return false
+
+// check predefined query templates - return list of locations
+function check_templates(query):
+	locations = []
+	for temp in templates:
+		if query like template:
+			positions = template.location_positions
+			for pos in positions:
+				locations.append(query[pos])
+			return locations
+	return locations
+
+// long lookup to index
+function long_lookup(tokens):
+	locations = []
+	for t in tokens:
+		if find_token_index(t):
+			locations.append(t)
+	return locations			
+	
+// function to execute by default
+function find_locations(query):
+	if cache_lookup(query):
+		return location(s)
+	else
+		locations = check_templates(query)
+		if length(locs) != 0:
+			query_cache[query] += 1
+			return locations
+		else
+			tokens = tokenize(query)
+			locations = long_lookup(tokens)
+			if length(locations) != 0:
+				return locations
+	// no location found at all
+	return error_no_locations
+
+find_locations(query);
+\end{lstlisting}
+
+This pseudo code go through each of the above stated methods and checks.
+The order in which each executes should be the least costliest for each.
+If no locations are found then it will return 0 or error message of ``no locations found.''
+This algorithm also has an update policy to the cache for frequent queries.
 
 \clearpage
 
