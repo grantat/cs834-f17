@@ -311,13 +311,54 @@ So if there are two ``North Carolina'' occurrences its apparent that this has mo
 \subsection*{Question}
 
 \begin{verbatim}
-
+6.5. Describe the snippet generation algorithm in Galago. 
+Would this algorithm work well for pages with little text 
+content? Describe in detail how you would modify the 
+algorithm to improve it.
 \end{verbatim}
 
 \subsection*{Answer}
 
+The snippet generation algorithm in Galago is actually publicly available and can be found inside the source code in the following directory: {galago-3.12/core/src/main/java/org/lemurproject/galago/core/index/corpus/SnippetGenerator.java}.
+Although the code is slightly overbearing, and hideous java, the algorithm to create snippets algorithm is pretty straightforward.
+A short description is as follows:
 
+\begin{enumerate}
+  \item First hits a ``getSnippet'' function which takes document texts and a set of query terms
+  \item It then finds the positions of the query terms in the document and passes it to the next functionality
+  \item It then tokenizes and stems each word in the query using the Krovetz Stemmer
+  \item For each of the terms matched in the documents it creates a region, or sentence of variable length shown in the document.
+  \item If the terms in the snippet have regions that overlap it attempts to join them, if the size of the snippet is greater than 150 characters it will attempt to reduce the region size
+  \item It then adds separators between regions by ``...'' but also bolds the words if found verbatim.
+\end{enumerate}
 
+This algorithm does not work well with little text content.
+This algorithm focuses on query matches in the text, but also extracts regions for each of these snippets.
+If the region size isn't large enough the snippet might think the context is not enough for a snippet.
+An example is shown in Figure \ref{fig:g3}.
+The first image shows the SERP page for ``bit'' where the top two results have good snippets with this word in context.
+The third entry however, has no snippet and in Figure \ref{fig:g32} the document doesn't actually contain the entire query word but actually is a stem for the word ``bits''.
+I think this could be better represented with simply creating regions around the words with ``bit'' stem if there are no exact matches of ``bit'' in context.
+
+I think I would improve the algorithm with inclusion of stemming logic in a snippet if there are no entries.
+If there aren't even any other stemmed words in the document then there should be some kind of abstract text to better represent the document.
+There are signs in the code that there are actually attempts to find the stems of the words and expose words create weights for the ``best candidate'' snippets.
+In the notes its stated that this actually is too time consuming and will force users to wait for results.
+So in this case they chose speed over appearances in some cases which is a fair choice.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{galago3.png}
+\caption{SERP page for ``bit'' query}
+\label{fig:g3}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{g3.png}
+\caption{Actual Document for bit entry}
+\label{fig:g32}
+\end{figure}
 
 \clearpage
 

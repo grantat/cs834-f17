@@ -33,6 +33,10 @@ are still connected to each other form the clusters.
 for detecting place names or locations in queries. Show examples of the
 types of queries where your algorithm would succeed and where it would fail.
 
+> 6.5. Describe the snippet generation algorithm in Galago. Would this algorithm
+work well for pages with little text content? Describe in detail how you would
+modify the algorithm to improve it.
+
 > 7.7. What is the “bucket” analogy for a bigram language model? Give examples.
 
 > 7.8. Using the Galago implementation of query likelihood, study the impact of
