@@ -25,6 +25,10 @@ cluster the points?
 > 9.9. Use K-means and spherical K-means to cluster the data points in Exercise
 9.8. How do the clusterings differ?
 
+> 9.10. Nearest neighbor clusters are not symmetric, in the sense that if instance A
+is one of instance B’s nearest neighbors, the reverse is not necessarily true. Explain
+how this can happen with a diagram.
+
 > 9.11. The K nearest neighbors of a document could be represented by links to
 those documents. Describe two ways this representation could be used in a search
 application.

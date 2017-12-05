@@ -89,28 +89,10 @@ Of course there could also be noise in the live data if everyone's click data is
 \clearpage
 
 % =================================
-% Second question
-% =================================
-
-\section*{2}
-
-\subsection*{Question}
-
-\begin{verbatim}
-
-\end{verbatim}
-
-\subsection*{Answer}
-
-
-
-\clearpage
-
-% =================================
 % 3rd question
 % =================================
 
-\section*{3}
+\section*{2}
 
 \subsection*{Question}
 
@@ -197,7 +179,7 @@ I would still have to find a distance metric between all of them, using euclidea
 % 4th question
 % =================================
 
-\section*{4}
+\section*{3}
 
 \subsection*{Question}
 
@@ -237,6 +219,40 @@ Regular k-means showed to have 5 nodes in each cluster while spherical k-means s
 \caption{K-means with cosine distance}
 \label{fig:kmeans-cos}
 \end{figure}
+
+\clearpage
+
+
+% =================================
+% Second question
+% =================================
+
+\section*{4}
+
+\subsection*{Question}
+
+\begin{verbatim}
+9.10. Nearest neighbor clusters are not symmetric, in the 
+sense that if instance A is one of instance B's nearest 
+neighbors, the reverse is not necessarily true. Explain
+how this can happen with a diagram.
+\end{verbatim}
+
+\subsection*{Answer}
+
+An example of this is shown in Figure \ref{fig:knn}.
+When K = 2 for this diagram, K nearest neighbor clusters are not symmetric.
+Assuming A and B are the centers, A's nearest neighbors would be C and D, while B's nearest neighbor would be A and C.
+This shows there is a difference in clusters but the since the nodes around B are more sparse it would not be considered symmetric.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{knn_diagram.png}
+\caption{K nearest neighbor clusters diagram}
+\label{fig:knn}
+\end{figure}
+
+
 
 \clearpage
 
