@@ -257,6 +257,38 @@ application.
 
 \subsection*{Answer}
 
+I think using this approach in a search engine application is an interesting approach.
+Often search engines are known to have a cache to quick lookup results.
+Documents in these search are also often stored in inverted indexes with popularity weight.
+
+I believe one way K nearest neighbors can be used is to represent a document based on the links in the document itself.
+If a link points to an outside document that shows a relationship.
+I think if we grouped top-\textit{K} links found in the document to the document itself, this way could be used to augment SERP results.
+What I mean is that if a document had 5 links as nearest neighbors it would be represented as follows:
+
+\begin{verbatim}
+{
+d_1: [link_1,link_2, ..., link_k],
+d_2: [link_1,link_2, ..., link_k],
+.
+.
+.
+d_k: [link_1,link_2, ..., link_k]
+}
+\end{verbatim}
+
+When a search engine retrieves results whichever \textit{N} number of links have a high weight association they can be shown on the SERP results as a successive answer.
+This is assuming there is a threshold specified somewhere for the weights.
+
+Another Idea is that the overlap determined by k nearest neighbors could also be used in a pseudo relevance feedback way.
+Pseudo relevance feedback is an automated analysis provided locally to users in a way the user doesn't have to interact with the system.
+I think a good example a way this could work would be based on clickthrough data provided by a user.
+One example is a user goes to a website like Pinterest where users are shown a collection of images, and for the sake convenience lets say the images are grouped in categories.
+If a user clicks a link in a section, we can take the K nearest neighbor links and say they are closely associated.
+A pseudo relevance feedback model can pick do some sort of pre-fetching locally and then get the associated terms of the documents.
+The next time the user visits the Pinterest website a user should have some sort of model that says they like the documents closely associated with their clickthrough data.
+
+
 \clearpage
 
 
