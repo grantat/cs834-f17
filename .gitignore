@@ -19,3 +19,6 @@ en/
 
 # virtual environment
 venv/
+
+# nodejs
+node_modules/

@@ -55,6 +55,9 @@ between two items be measured?
 > 10.11. Suggest how the maximum and minimum resource ranking scores, Rmax
 and Rmin, could be estimated for a given query
 
+> 11.5. How many papers dealing with term dependency can you find in the SIGIR
+proceedings since 2000? List their citations.
+
 > 11.11. Look at a sample of images or videos that have been tagged by users and
 separate the tags into three groups: those you think could eventually be done automatically
 by image processing and object recognition, those you think would

@@ -1,0 +1,647 @@
+[
+    {
+        "authors": "D Metzler, WB Croft\u00a0- \u2026\u00a0of the 28th annual international ACM SIGIR\u00a0\u2026, 2005 - dl.acm.org", 
+        "citations": "776", 
+        "title": "A Markov random field model for term dependencies"
+    }, 
+    {
+        "authors": "J Peng, C Macdonald, B He, V Plachouras\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "56", 
+        "title": "Incorporating term dependency in the DFR framework"
+    }, 
+    {
+        "authors": "M Bendersky, WB Croft\u00a0- \u2026\u00a0of the 35th international ACM SIGIR conference\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "54", 
+        "title": "Modeling higher-order term dependencies in information retrieval using query hypergraphs"
+    }, 
+    {
+        "authors": "M Srikanth, R Srihari\u00a0- \u2026\u00a0of the 26th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "19", 
+        "title": "Incorporating query term dependencies in language models for document retrieval"
+    }, 
+    {
+        "authors": "A Sordoni, JY Nie, Y Bengio\u00a0- \u2026\u00a0of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "21", 
+        "title": "Modeling term dependencies with quantum language models for IR"
+    }, 
+    {
+        "authors": "H Kim, I Choi, M Kim\u00a0- \u2026\u00a0of the 27th annual international ACM SIGIR\u00a0\u2026, 2004 - dl.acm.org", 
+        "citations": "9", 
+        "title": "Refining term weights of documents using term dependencies"
+    }, 
+    {
+        "authors": "M Petri, A Moffat, JS Culpepper\u00a0- \u2026\u00a0of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "10", 
+        "title": "Score-safe term-dependency processing with hybrid indexes"
+    }, 
+    {
+        "authors": "Y Xu, F Ding, B Wang\u00a0- \u2026\u00a0of the 31st annual international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "0", 
+        "title": "Utilizing phrase based semantic information for term dependency"
+    }, 
+    {
+        "authors": "JL Fagan\u00a0- ACM SIGIR Forum, 2017 - dl.acm.org", 
+        "citations": "169", 
+        "title": "Automatic P hrase Indexing for Document Retrieval: An Examination of Syntactic and Non-Syntactic Methods"
+    }, 
+    {
+        "authors": "X Lu\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "1", 
+        "title": "Improving Search using Proximity-Based Statistics"
+    }, 
+    {
+        "authors": "M Bendersky, WB Croft, DA Smith\u00a0- \u2026\u00a0of the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "49", 
+        "title": "Two-stage query segmentation for information retrieval"
+    }, 
+    {
+        "authors": "J Gao, JY Nie, G Wu, G Cao\u00a0- \u2026\u00a0of the 27th annual international ACM SIGIR\u00a0\u2026, 2004 - dl.acm.org", 
+        "citations": "294", 
+        "title": "Dependence language model for information retrieval"
+    }, 
+    {
+        "authors": "R Blanco, C Lioma\u00a0- \u2026\u00a0of the 30th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "35", 
+        "title": "Random walk term weighting for information retrieval"
+    }, 
+    {
+        "authors": "P Bruza, D Song\u00a0- \u2026\u00a0of the 26th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "16", 
+        "title": "A comparison of various approaches for using probabilistic dependencies in language modeling"
+    }, 
+    {
+        "authors": "D Metzler, WB Croft\u00a0- \u2026\u00a0of the 30th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "226", 
+        "title": "Latent concept expansion using markov random fields"
+    }, 
+    {
+        "authors": "D Ganguly, D Roy, M Mitra, GJF Jones\u00a0- \u2026\u00a038th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "49", 
+        "title": "Word embedding based generalized language model for information retrieval"
+    }, 
+    {
+        "authors": "C Macdonald, RLT Santos, I Ounis, I Soboroff\u00a0- ACM SIGIR Forum, 2010 - dl.acm.org", 
+        "citations": "56", 
+        "title": "Blog track research at TREC"
+    }, 
+    {
+        "authors": "Y Li, WPR Luk, KSE Ho, FLK Chung\u00a0- \u2026\u00a0annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "103", 
+        "title": "Improving weak ad-hoc queries using wikipedia asexternal corpus"
+    }, 
+    {
+        "authors": "C Eickhoff, AP de Vries, T Hofmann\u00a0- \u2026\u00a0of the 38th international ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "8", 
+        "title": "Modelling term dependence with copulas"
+    }, 
+    {
+        "authors": "Q Mei, H Fang, CX Zhai\u00a0- \u2026\u00a0of the 30th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "52", 
+        "title": "A study of Poisson query generation model for information retrieval"
+    }, 
+    {
+        "authors": "D Metzler, WB Croft\u00a0- \u2026\u00a0of the 28th annual international ACM SIGIR\u00a0\u2026, 2005 - dl.acm.org", 
+        "citations": "776", 
+        "title": "A Markov random field model for term dependencies"
+    }, 
+    {
+        "authors": "J Peng, C Macdonald, B He, V Plachouras\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "56", 
+        "title": "Incorporating term dependency in the DFR framework"
+    }, 
+    {
+        "authors": "M Bendersky, WB Croft\u00a0- \u2026\u00a0of the 35th international ACM SIGIR conference\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "54", 
+        "title": "Modeling higher-order term dependencies in information retrieval using query hypergraphs"
+    }, 
+    {
+        "authors": "M Srikanth, R Srihari\u00a0- \u2026\u00a0of the 26th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "19", 
+        "title": "Incorporating query term dependencies in language models for document retrieval"
+    }, 
+    {
+        "authors": "A Sordoni, JY Nie, Y Bengio\u00a0- \u2026\u00a0of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "21", 
+        "title": "Modeling term dependencies with quantum language models for IR"
+    }, 
+    {
+        "authors": "H Kim, I Choi, M Kim\u00a0- \u2026\u00a0of the 27th annual international ACM SIGIR\u00a0\u2026, 2004 - dl.acm.org", 
+        "citations": "9", 
+        "title": "Refining term weights of documents using term dependencies"
+    }, 
+    {
+        "authors": "M Petri, A Moffat, JS Culpepper\u00a0- \u2026\u00a0of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "10", 
+        "title": "Score-safe term-dependency processing with hybrid indexes"
+    }, 
+    {
+        "authors": "Y Xu, F Ding, B Wang\u00a0- \u2026\u00a0of the 31st annual international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "0", 
+        "title": "Utilizing phrase based semantic information for term dependency"
+    }, 
+    {
+        "authors": "JL Fagan\u00a0- ACM SIGIR Forum, 2017 - dl.acm.org", 
+        "citations": "169", 
+        "title": "Automatic P hrase Indexing for Document Retrieval: An Examination of Syntactic and Non-Syntactic Methods"
+    }, 
+    {
+        "authors": "X Lu\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "1", 
+        "title": "Improving Search using Proximity-Based Statistics"
+    }, 
+    {
+        "authors": "L Wang, PN Bennett, K Collins-Thompson\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "41", 
+        "title": "Robust ranking models via risk-sensitive optimization"
+    }, 
+    {
+        "authors": "S Jameel, W Lam\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "28", 
+        "title": "An unsupervised topic segmentation model incorporating word order"
+    }, 
+    {
+        "authors": "R Blanco, P Boldi\u00a0- Proceedings of the 35th international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "14", 
+        "title": "Extending BM25 with multiple query operators"
+    }, 
+    {
+        "authors": "R Aly, D Hiemstra, T Demeester\u00a0- \u2026\u00a0of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "31", 
+        "title": "Taily: shard selection using the tail of score distributions"
+    }, 
+    {
+        "authors": "E Aktolga, J Allan\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "19", 
+        "title": "Sentiment diversification with different biases"
+    }, 
+    {
+        "authors": "R Saha Roy, N Ganguly, M Choudhury\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "15", 
+        "title": "An IR-based evaluation framework for web search query segmentation"
+    }, 
+    {
+        "authors": "D Arroyuelo, S Gonz\u00e1lez, M Marin, M Oyarz\u00fan\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "17", 
+        "title": "To index or not to index: time-space trade-offs in search engines with positional ranking functions"
+    }, 
+    {
+        "authors": "N O'Hare, P de Juan, R Schifanella, Y He\u2026\u00a0- \u2026\u00a0ACM SIGIR conference\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "5", 
+        "title": "Leveraging user interaction signals for web image search"
+    }, 
+    {
+        "authors": "M Efron\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "5", 
+        "title": "Query representation for cross-temporal information retrieval"
+    }, 
+    {
+        "authors": "P Bailey, A Moffat, F Scholer, P Thomas\u00a0- \u2026\u00a038th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "27", 
+        "title": "User variability and IR system evaluation"
+    }, 
+    {
+        "authors": "F Raiber, O Kurland\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "13", 
+        "title": "Ranking document clusters using markov random fields"
+    }, 
+    {
+        "authors": "S Alici, IS Altingovde, R Ozcan\u2026\u00a0- \u2026\u00a0ACM SIGIR conference\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "27", 
+        "title": "Timestamp-based result cache invalidation for web search engines"
+    }, 
+    {
+        "authors": "R Berendsen, M Tsagkias, W Weerkamp\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "17", 
+        "title": "Pseudo test collections for training and tuning microblog rankers"
+    }, 
+    {
+        "authors": "A Spitz, M Gertz\u00a0- Proceedings of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "9", 
+        "title": "Terms over LOAD: Leveraging Named Entities for Cross-Document Extraction and Summarization of Events"
+    }, 
+    {
+        "authors": "F Raiber, O Kurland\u00a0- Proceedings of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "6", 
+        "title": "Query-performance prediction: setting the expectations straight"
+    }, 
+    {
+        "authors": "A Borisov, I Markov, M de Rijke\u2026\u00a0- \u2026\u00a0International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "18", 
+        "title": "A context-aware time model for web search"
+    }, 
+    {
+        "authors": "J He, T Suel\u00a0- Proceedings of the 35th international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "9", 
+        "title": "Optimizing positional index structures for versioned document collections"
+    }, 
+    {
+        "authors": "Z Zhang, Q Wang, L Si, J Gao\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "2", 
+        "title": "Learning for Efficient Supervised Query Expansion via Two-stage Feature Selection"
+    }, 
+    {
+        "authors": "V Lavrenko\u00a0- \u2026\u00a0of the 33rd International ACM SIGIR\u00a0\u2026, 2010 - homepages.inf.ed.ac.uk", 
+        "citations": "4", 
+        "title": "[PDF][PDF] Introduction to Probabilistic Models for Information Retrieval"
+    }, 
+    {
+        "authors": "D Lawrie, WB Croft, A Rosenberg\u00a0- \u2026\u00a024th annual international ACM SIGIR\u00a0\u2026, 2001 - dl.acm.org", 
+        "citations": "219", 
+        "title": "Finding topic words for hierarchical summarization"
+    }, 
+    {
+        "authors": "N Balasubramanian, J Allan, WB Croft\u00a0- \u2026\u00a0annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "30", 
+        "title": "A comparison of sentence retrieval techniques"
+    }, 
+    {
+        "authors": "D Metzler\u00a0- ACM SIGIR Forum, 2008 - dl.acm.org", 
+        "citations": "4", 
+        "title": "Beyond bags of words: Effectively modeling dependence and features in information retrieval"
+    }, 
+    {
+        "authors": "K Cai, C Chen, K Liu, J Bu, P Huang\u00a0- \u2026\u00a0annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "6", 
+        "title": "MRF based approach for sentence retrieval"
+    }, 
+    {
+        "authors": "G Cao, JY Nie, J Bai\u00a0- \u2026\u00a0of the 28th annual international ACM SIGIR\u00a0\u2026, 2005 - dl.acm.org", 
+        "citations": "184", 
+        "title": "Integrating word relationships into language models"
+    }, 
+    {
+        "authors": "Y Lin, H Lin, S Jin, Z Ye\u00a0- \u2026\u00a0of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "39", 
+        "title": "Social annotation in query expansion: a machine learning approach"
+    }, 
+    {
+        "authors": "A Trotman, SJ Cunningham, L Sitbon\u00a0- ACM SIGIR Forum, 2013 - dl.acm.org", 
+        "citations": "0", 
+        "title": "The seventeenth australasian document computing symposium"
+    }, 
+    {
+        "authors": "T Tao, CX Zhai\u00a0- \u2026\u00a0of the 30th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "245", 
+        "title": "An exploration of proximity measures in information retrieval"
+    }, 
+    {
+        "authors": "J Zhao, Y Yun\u00a0- Proceedings of the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "69", 
+        "title": "A proximity language model for information retrieval"
+    }, 
+    {
+        "authors": "MW Bilotti, P Ogilvie, J Callan, E Nyberg\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "106", 
+        "title": "Structured retrieval for question answering"
+    }, 
+    {
+        "authors": "N Limsopatham, C Macdonald, R McCreadie\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "21", 
+        "title": "Exploiting term dependence while handling negation in medical search"
+    }, 
+    {
+        "authors": "Y Lv, CX Zhai\u00a0- Proceedings of the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "198", 
+        "title": "Positional language models for information retrieval"
+    }, 
+    {
+        "authors": "M Bendersky, D Metzler, WB Croft\u00a0- \u2026\u00a0of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "100", 
+        "title": "Parameterized concept weighting in verbose queries"
+    }, 
+    {
+        "authors": "J Lin, D Demner-Fushman\u00a0- \u2026\u00a0of the 29th annual international ACM SIGIR\u00a0\u2026, 2006 - dl.acm.org", 
+        "citations": "73", 
+        "title": "The role of knowledge in conceptual retrieval: a study in the domain of clinical medicine"
+    }, 
+    {
+        "authors": "N Zhiltsov, A Kotov, F Nikolaev\u00a0- \u2026\u00a0of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "33", 
+        "title": "Fielded sequential dependence model for ad-hoc entity retrieval in the web of data"
+    }, 
+    {
+        "authors": "F Ture, J Lin, DW Oard\u00a0- \u2026\u00a0of the 35th international ACM SIGIR conference\u00a0\u2026, 2012 - dl.acm.org", 
+        "citations": "16", 
+        "title": "Looking inside the box: Context-sensitive translation for cross-language information retrieval"
+    }, 
+    {
+        "authors": "S Balaneshin-kordan, A Kotov\u00a0- \u2026\u00a0of the 40th International ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "0", 
+        "title": "Embedding-based Query Expansion for Weighted Sequential Dependence Retrieval Model"
+    }, 
+    {
+        "authors": "L Shi, JY Nie\u00a0- Proceedings of the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "10", 
+        "title": "Integrating phrase inseparability in phrase-based model"
+    }, 
+    {
+        "authors": "Y Yue, T Finley, F Radlinski, T Joachims\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "591", 
+        "title": "A support vector method for optimizing average precision"
+    }, 
+    {
+        "authors": "Q Li, J Li, P Zhang, D Song\u00a0- \u2026\u00a0of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "4", 
+        "title": "Modeling multi-query retrieval tasks using density matrix transformation"
+    }, 
+    {
+        "authors": "J Teevan, DR Karger\u00a0- \u2026\u00a0of the 26th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "25", 
+        "title": "Empirical development of an exponential probabilistic model for text retrieval: using textual analysis to build a better model"
+    }, 
+    {
+        "authors": "CJ Lee, WB Croft\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "3", 
+        "title": "Building a web test collection using social media"
+    }, 
+    {
+        "authors": "F Diaz, D Metzler\u00a0- \u2026\u00a0of the 29th annual international ACM SIGIR\u00a0\u2026, 2006 - dl.acm.org", 
+        "citations": "191", 
+        "title": "Improving the estimation of relevance models using large external corpora"
+    }, 
+    {
+        "authors": "M Bendersky, WB Croft\u00a0- \u2026\u00a0of the 31st annual international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "262", 
+        "title": "Discovering key concepts in verbose queries"
+    }, 
+    {
+        "authors": "N Nanas, V Uren, A De Roeck\u00a0- \u2026\u00a026th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "80", 
+        "title": "Building and applying a concept hierarchy representation of a user profile"
+    }, 
+    {
+        "authors": "M Lease\u00a0- Proceedings of the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "56", 
+        "title": "An improved markov random field model for supporting verbose queries"
+    }, 
+    {
+        "authors": "J Zhao, JX Huang, B He\u00a0- \u2026\u00a0of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "32", 
+        "title": "CRTER: using cross terms to enhance probabilistic information retrieval"
+    }, 
+    {
+        "authors": "F Nikolaev, A Kotov, N Zhiltsov\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "10", 
+        "title": "Parameterized fielded term dependence models for ad-hoc entity retrieval from knowledge graph"
+    }, 
+    {
+        "authors": "JH Park, WB Croft\u00a0- Proceedings of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "28", 
+        "title": "Query term ranking based on dependency parsing of verbose queries"
+    }, 
+    {
+        "authors": "A Arampatzis, A van Hameran\u00a0- \u2026\u00a024th annual international ACM SIGIR\u00a0\u2026, 2001 - dl.acm.org", 
+        "citations": "69", 
+        "title": "The score-distributional threshold optimization for adaptive binary classification tasks"
+    }, 
+    {
+        "authors": "G Zheng, J Callan\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "35", 
+        "title": "Learning to reweight terms with distributed representations"
+    }, 
+    {
+        "authors": "L Azzopardi, M De Rijke, K Balog\u00a0- \u2026\u00a030th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "97", 
+        "title": "Building simulated queries for known-item topics: an analysis using six european languages"
+    }, 
+    {
+        "authors": "Y Li, BJP Hsu, CX Zhai, K Wang\u00a0- \u2026\u00a0of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "46", 
+        "title": "Unsupervised query segmentation using clickthrough for information retrieval"
+    }, 
+    {
+        "authors": "KT Maxwell, WB Croft\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "38", 
+        "title": "Compact query term selection using topically related text"
+    }, 
+    {
+        "authors": "T Roelleke\u00a0- \u2026\u00a0of the 26th annual international ACM SIGIR\u00a0\u2026, 2003 - dl.acm.org", 
+        "citations": "39", 
+        "title": "A frequency-based and a poisson-based definition of the probability of being informative"
+    }, 
+    {
+        "authors": "Y Lv, CX Zhai\u00a0- Proceedings of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "161", 
+        "title": "Positional relevance model for pseudo-relevance feedback"
+    }, 
+    {
+        "authors": "Y Zhu, Y Lan, J Guo, X Cheng, S Niu\u00a0- \u2026\u00a0the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "42", 
+        "title": "Learning for search result diversification"
+    }, 
+    {
+        "authors": "N Balasubramanian, G Kumaran\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "74", 
+        "title": "Exploring reductions for long web queries"
+    }, 
+    {
+        "authors": "A Shtok, O Kurland, D Carmel\u00a0- \u2026\u00a0of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "25", 
+        "title": "Using statistical decision theory and relevance models for query-performance prediction"
+    }, 
+    {
+        "authors": "A Babashzadeh, J Huang, M Daoud\u00a0- \u2026\u00a0the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "21", 
+        "title": "Exploiting semantics for improving clinical information retrieval"
+    }, 
+    {
+        "authors": "X Xue, WB Croft\u00a0- Proceedings of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "11", 
+        "title": "Modeling subset distributions for verbose queries"
+    }, 
+    {
+        "authors": "A Montazeralghaem, H Zamani, A Shakery\u00a0- \u2026\u00a0International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "8", 
+        "title": "Axiomatic analysis for improving the log-logistic feedback model"
+    }, 
+    {
+        "authors": "A Fang, I Ounis, P Habel, C Macdonald\u2026\u00a0- \u2026\u00a0ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "12", 
+        "title": "Topic-centric classification of twitter user's political orientation"
+    }, 
+    {
+        "authors": "J Gonzalo, H Li, A Moschitti, J Xu\u00a0- \u2026\u00a0of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "4", 
+        "title": "Sigir 2014 workshop on semantic matching in information retrieval"
+    }, 
+    {
+        "authors": "R Nallapati\u00a0- \u2026\u00a0of the 27th annual international ACM SIGIR\u00a0\u2026, 2004 - dl.acm.org", 
+        "citations": "314", 
+        "title": "Discriminative models for information retrieval"
+    }, 
+    {
+        "authors": "JL Elsas, J Arguello, J Callan\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "150", 
+        "title": "Retrieval and feedback models for blog feed search"
+    }, 
+    {
+        "authors": "J He, M de Rijke\u00a0- Proceedings of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "9", 
+        "title": "A ranking approach to target detection for automatic link generation"
+    }, 
+    {
+        "authors": "F Ture, J Lin\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "3", 
+        "title": "Flat vs. hierarchical phrase-based translation models for cross-language information retrieval"
+    }, 
+    {
+        "authors": "C Lioma, JG Simonsen, B Larsen\u2026\u00a0- \u2026\u00a0International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "7", 
+        "title": "Non-compositional term dependence for information retrieval"
+    }, 
+    {
+        "authors": "Y Zhou, WB Croft\u00a0- \u2026\u00a0of the 30th annual international ACM SIGIR\u00a0\u2026, 2007 - dl.acm.org", 
+        "citations": "169", 
+        "title": "Query performance prediction in web search environments"
+    }, 
+    {
+        "authors": "D Metzler, J Novak, H Cui, S Reddy\u00a0- \u2026\u00a0the 32nd international ACM SIGIR\u00a0\u2026, 2009 - dl.acm.org", 
+        "citations": "62", 
+        "title": "Building enriched document representations using aggregated anchor text"
+    }, 
+    {
+        "authors": "KM Svore, PH Kanani, N Khan\u00a0- \u2026\u00a0of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "47", 
+        "title": "How good is a span of terms?: exploiting proximity to improve web retrieval"
+    }, 
+    {
+        "authors": "J Gao, G Xu, J Xu\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "25", 
+        "title": "Query expansion using path-constrained random walks"
+    }, 
+    {
+        "authors": "D Zhu, B Carterette\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "14", 
+        "title": "An adaptive evidence weighting method for medical record search"
+    }, 
+    {
+        "authors": "L Wang, J Lin, D Metzler\u00a0- \u2026\u00a0of the 33rd international ACM SIGIR\u00a0\u2026, 2010 - dl.acm.org", 
+        "citations": "74", 
+        "title": "Learning to efficiently rank"
+    }, 
+    {
+        "authors": "SH Na, J Kim, IS Kang, JH Lee\u00a0- \u2026\u00a0the 31st annual international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "6", 
+        "title": "Exploiting proximity feature in bigram language model for information retrieval"
+    }, 
+    {
+        "authors": "RC Chen, L Gallagher, R Blanco\u2026\u00a0- \u2026\u00a0International ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "3", 
+        "title": "Efficient cost-aware cascade ranking in multi-stage retrieval"
+    }, 
+    {
+        "authors": "B P\u00f4ssas, N Ziviani, W Meira Jr\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2002 - dl.acm.org", 
+        "citations": "38", 
+        "title": "Set-based model: A new approach for information retrieval"
+    }, 
+    {
+        "authors": "J Jagarlamudi, J Gao\u00a0- Proceedings of the 36th international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "3", 
+        "title": "Modeling click-through based word-pairs for web search"
+    }, 
+    {
+        "authors": "A Montazeralghaem, H Zamani, A Shakery\u00a0- \u2026\u00a0International ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "0", 
+        "title": "Term Proximity Constraints for Pseudo-Relevance Feedback"
+    }, 
+    {
+        "authors": "Q Ai, L Yang, J Guo, WB Croft\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "15", 
+        "title": "Improving language estimation with the paragraph vector model for ad-hoc retrieval"
+    }, 
+    {
+        "authors": "R Yan, Y Song, H Wu\u00a0- Proceedings of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "31", 
+        "title": "Learning to respond with deep neural networks for retrieval-based human-computer conversation system"
+    }, 
+    {
+        "authors": "MD Smucker, J Allan\u00a0- \u2026\u00a0of the 29th annual international ACM SIGIR\u00a0\u2026, 2006 - dl.acm.org", 
+        "citations": "55", 
+        "title": "Find-similar: similarity browsing as a search tool"
+    }, 
+    {
+        "authors": "J Gao, H Qi, X Xia, JY Nie\u00a0- \u2026\u00a0of the 28th annual international ACM SIGIR\u00a0\u2026, 2005 - dl.acm.org", 
+        "citations": "118", 
+        "title": "Linear discriminant model for information retrieval"
+    }, 
+    {
+        "authors": "H Lee, Y Ahn, H Lee, S Ha, S Lee\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "2", 
+        "title": "Quote Recommendation in Dialogue using Deep Neural Network"
+    }, 
+    {
+        "authors": "W Song, Y Zhang, Y Xie, T Liu, S Li\u00a0- \u2026\u00a0of the 34th international ACM SIGIR\u00a0\u2026, 2011 - dl.acm.org", 
+        "citations": "1", 
+        "title": "Query term ranking based on search results overlap"
+    }, 
+    {
+        "authors": "H Raviv, O Kurland, D Carmel\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "15", 
+        "title": "Document retrieval using entity-based language models"
+    }, 
+    {
+        "authors": "L Xia, J Xu, Y Lan, J Guo, X Cheng\u00a0- \u2026\u00a0of the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "10", 
+        "title": "Modeling Document Novelty with Neural Tensor Network for Search Result Diversification"
+    }, 
+    {
+        "authors": "J Zhao, JX Huang\u00a0- Proceedings of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "6", 
+        "title": "An enhanced context-sensitive proximity model for probabilistic information retrieval"
+    }, 
+    {
+        "authors": "C Macdonald, N Tonellotto, I Ounis\u00a0- \u2026\u00a0of the 40th International ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "0", 
+        "title": "Efficient & Effective Selective Query Rewriting with Efficiency Predictions"
+    }, 
+    {
+        "authors": "JH Paik\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "3", 
+        "title": "A Probabilistic Model for Information Retrieval Based on Maximum Value Distribution"
+    }, 
+    {
+        "authors": "JH Park, WB Croft\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "8", 
+        "title": "Using key concepts in a translation model for retrieval"
+    }, 
+    {
+        "authors": "GK Jayasinghe, W Webber, M Sanderson\u2026\u00a0- \u2026\u00a0ACM SIGIR conference\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "3", 
+        "title": "Evaluating non-deterministic retrieval systems"
+    }, 
+    {
+        "authors": "F Jian, JX Huang, J Zhao, T He, P Hu\u00a0- \u2026\u00a0the 39th International ACM SIGIR\u00a0\u2026, 2016 - dl.acm.org", 
+        "citations": "4", 
+        "title": "A simple enhancement for ad-hoc information retrieval via topic modelling"
+    }, 
+    {
+        "authors": "B He, C Macdonald, I Ounis\u00a0- \u2026\u00a0of the 31st annual international ACM SIGIR\u00a0\u2026, 2008 - dl.acm.org", 
+        "citations": "14", 
+        "title": "Retrieval sensitivity under training using different measures"
+    }, 
+    {
+        "authors": "C Eickhoff, AP de Vries\u2026\u00a0- \u2026\u00a0international ACM SIGIR\u00a0\u2026, 2013 - dl.acm.org", 
+        "citations": "19", 
+        "title": "Copulas for information retrieval"
+    }, 
+    {
+        "authors": "F Hasibi, F Nikolaev, C Xiong, K Balog\u2026\u00a0- \u2026\u00a0ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "1", 
+        "title": "DBpedia-Entity v2: A Test Collection for Entity Search"
+    }, 
+    {
+        "authors": "M Petri, A Moffat\u00a0- Proceedings of the 38th International ACM SIGIR\u00a0\u2026, 2015 - dl.acm.org", 
+        "citations": "1", 
+        "title": "On the cost of phrase-based ranking"
+    }, 
+    {
+        "authors": "P Li, J Yao, L Wang, X Lin\u00a0- \u2026\u00a0of the 40th International ACM SIGIR\u00a0\u2026, 2017 - dl.acm.org", 
+        "citations": "0", 
+        "title": "SPOT: Selecting occuPations frOm Trajectories"
+    }, 
+    {
+        "authors": "J Dalton, L Dietz, J Allan\u00a0- \u2026\u00a0of the 37th international ACM SIGIR\u00a0\u2026, 2014 - dl.acm.org", 
+        "citations": "84", 
+        "title": "Entity query feature expansion using knowledge base links"
+    }
+]

@@ -71,26 +71,7 @@
 % =================================
 % Second question
 % =================================
-
 \section*{2}
-
-\subsection*{Question}
-
-\begin{verbatim}
-
-\end{verbatim}
-
-\subsection*{Answer}
-
-
-
-\clearpage
-
-% =================================
-% 3rd question
-% =================================
-
-\section*{3}
 
 \subsection*{Question}
 
@@ -121,6 +102,7 @@ Medium keeps track of users viewing history and then when a user visits the home
 It has a ``You might like'' section where for each article it even says ``Based on your interests.''
 This shows that it has filtering in place that is adaptive to my viewing history and tries to find the best trending/matching documents for my reading.
 My results are shown in Figure \ref{fig:med}.
+If I decide to start reading other topics a majority of the time then this filtering system will be updated over time on its own.
 
 \begin{figure}[h]
 \centering
@@ -129,8 +111,26 @@ My results are shown in Figure \ref{fig:med}.
 \label{fig:med}
 \end{figure}
 
-
 % \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:sitemap_output,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/data/sitemap.xml}
+
+\clearpage
+
+% =================================
+% 3rd question
+% =================================
+
+\section*{3}
+
+\subsection*{Question}
+
+\begin{verbatim}
+10.11. Suggest how the maximum and minimum resource 
+ranking scores, Rmax and Rmin, could be estimated 
+for a given query
+\end{verbatim}
+
+\subsection*{Answer}
+
 
 \clearpage
 
@@ -143,11 +143,177 @@ My results are shown in Figure \ref{fig:med}.
 \subsection*{Question}
 
 \begin{verbatim}
-
+11.5. How many papers dealing with term dependency 
+can you find in the SIGIR proceedings since 2000?
+List their citations
 \end{verbatim}
 
 \subsection*{Answer}
 
+To solve this problem I decided to use google scholar to find the citations.
+I searched on the terms ``term dependency,'' ``term dependencies,'' and ``term dependent'' with ACM SIGIR as the source and all publication later than 2000.
+For this query I got 129 results as shown in Figure \ref{fig:sigir}.
+Whats interesting is when I went back later this result changed going up to 155 related articles, but regardless I kept what I originally had.
+
+Google creates a query string that I could reuse to perform these queries, for example:
+
+\url{https://scholar.google.com/scholar?start=0&q=\%22term+dependency\%22+\%7C+\%22term+dependencies\%22+\%7C+\%22term+dependent\%22+source:\%22ACM+SIGIR\%22&hl=en&as_sdt=0,47&as_ylo=2000}
+
+One of the keys is ``start'' indicating an offset position for pagination.
+Since there were 10 results per page I created two scripts to download each page and then parse the results.
+The first script I wrote was done in nodejs using headless chrome, puppeteer.js, as shown in Listing \ref{lst:head}.
+The other script was used to parse the document for titles, citation counts, and author names as shown in Listing \ref{lst:parse}.
+For this question I left out author names as it was difficult to parse utf-8 for latex.
+
+The results are as follows:
+
+\begin{center}
+\begin{longtable}{|*2{p{3.5cm}| }}
+\hline
+\textbf{Title} & \textbf{Citations} \\ \hline 
+A Markov random field model for term dependencies & 776 \\ \hline
+Incorporating term dependency in the DFR framework & 56 \\ \hline
+Modeling higher-order term dependencies in information retrieval using query hypergraphs & 54 \\ \hline
+Incorporating query term dependencies in language models for document retrieval & 19 \\ \hline
+Modeling term dependencies with quantum language models for IR & 21 \\ \hline
+Refining term weights of documents using term dependencies & 9 \\ \hline
+Score-safe term-dependency processing with hybrid indexes & 10 \\ \hline
+Utilizing phrase based semantic information for term dependency & 0 \\ \hline
+Automatic P hrase Indexing for Document Retrieval: An Examination of Syntactic and Non-Syntactic Methods & 169 \\ \hline
+Improving Search using Proximity-Based Statistics & 1 \\ \hline
+Two-stage query segmentation for information retrieval & 49 \\ \hline
+Dependence language model for information retrieval & 294 \\ \hline
+Random walk term weighting for information retrieval & 35 \\ \hline
+A comparison of various approaches for using probabilistic dependencies in language modeling & 16 \\ \hline
+Latent concept expansion using markov random fields & 226 \\ \hline
+Word embedding based generalized language model for information retrieval & 49 \\ \hline
+Blog track research at TREC & 56 \\ \hline
+Improving weak ad-hoc queries using wikipedia asexternal corpus & 103 \\ \hline
+Modelling term dependence with copulas & 8 \\ \hline
+A study of Poisson query generation model for information retrieval & 52 \\ \hline
+A Markov random field model for term dependencies & 776 \\ \hline
+Incorporating term dependency in the DFR framework & 56 \\ \hline
+Modeling higher-order term dependencies in information retrieval using query hypergraphs & 54 \\ \hline
+Incorporating query term dependencies in language models for document retrieval & 19 \\ \hline
+Modeling term dependencies with quantum language models for IR & 21 \\ \hline
+Refining term weights of documents using term dependencies & 9 \\ \hline
+Score-safe term-dependency processing with hybrid indexes & 10 \\ \hline
+Utilizing phrase based semantic information for term dependency & 0 \\ \hline
+Automatic P hrase Indexing for Document Retrieval: An Examination of Syntactic and Non-Syntactic Methods & 169 \\ \hline
+Improving Search using Proximity-Based Statistics & 1 \\ \hline
+Robust ranking models via risk-sensitive optimization & 41 \\ \hline
+An unsupervised topic segmentation model incorporating word order & 28 \\ \hline
+Extending BM25 with multiple query operators & 14 \\ \hline
+Taily: shard selection using the tail of score distributions & 31 \\ \hline
+Sentiment diversification with different biases & 19 \\ \hline
+An IR-based evaluation framework for web search query segmentation & 15 \\ \hline
+To index or not to index: time-space trade-offs in search engines with positional ranking functions & 17 \\ \hline
+Leveraging user interaction signals for web image search & 5 \\ \hline
+Query representation for cross-temporal information retrieval & 5 \\ \hline
+User variability and IR system evaluation & 27 \\ \hline
+Ranking document clusters using markov random fields & 13 \\ \hline
+Timestamp-based result cache invalidation for web search engines & 27 \\ \hline
+Pseudo test collections for training and tuning microblog rankers & 17 \\ \hline
+Terms over LOAD: Leveraging Named Entities for Cross-Document Extraction and Summarization of Events & 9 \\ \hline
+Query-performance prediction: setting the expectations straight & 6 \\ \hline
+A context-aware time model for web search & 18 \\ \hline
+Optimizing positional index structures for versioned document collections & 9 \\ \hline
+Learning for Efficient Supervised Query Expansion via Two-stage Feature Selection & 2 \\ \hline
+[PDF][PDF] Introduction to Probabilistic Models for Information Retrieval & 4 \\ \hline
+Finding topic words for hierarchical summarization & 219 \\ \hline
+A comparison of sentence retrieval techniques & 30 \\ \hline
+Beyond bags of words: Effectively modeling dependence and features in information retrieval & 4 \\ \hline
+MRF based approach for sentence retrieval & 6 \\ \hline
+Integrating word relationships into language models & 184 \\ \hline
+Social annotation in query expansion: a machine learning approach & 39 \\ \hline
+The seventeenth australasian document computing symposium & 0 \\ \hline
+An exploration of proximity measures in information retrieval & 245 \\ \hline
+A proximity language model for information retrieval & 69 \\ \hline
+Structured retrieval for question answering & 106 \\ \hline
+Exploiting term dependence while handling negation in medical search & 21 \\ \hline
+Positional language models for information retrieval & 198 \\ \hline
+Parameterized concept weighting in verbose queries & 100 \\ \hline
+The role of knowledge in conceptual retrieval: a study in the domain of clinical medicine & 73 \\ \hline
+Fielded sequential dependence model for ad-hoc entity retrieval in the web of data & 33 \\ \hline
+Looking inside the box: Context-sensitive translation for cross-language information retrieval & 16 \\ \hline
+Embedding-based Query Expansion for Weighted Sequential Dependence Retrieval Model & 0 \\ \hline
+Integrating phrase inseparability in phrase-based model & 10 \\ \hline
+A support vector method for optimizing average precision & 591 \\ \hline
+Modeling multi-query retrieval tasks using density matrix transformation & 4 \\ \hline
+Empirical development of an exponential probabilistic model for text retrieval: using textual analysis to build a better model & 25 \\ \hline
+Building a web test collection using social media & 3 \\ \hline
+Improving the estimation of relevance models using large external corpora & 191 \\ \hline
+Discovering key concepts in verbose queries & 262 \\ \hline
+Building and applying a concept hierarchy representation of a user profile & 80 \\ \hline
+An improved markov random field model for supporting verbose queries & 56 \\ \hline
+CRTER: using cross terms to enhance probabilistic information retrieval & 32 \\ \hline
+Parameterized fielded term dependence models for ad-hoc entity retrieval from knowledge graph & 10 \\ \hline
+Query term ranking based on dependency parsing of verbose queries & 28 \\ \hline
+The score-distributional threshold optimization for adaptive binary classification tasks & 69 \\ \hline
+Learning to reweight terms with distributed representations & 35 \\ \hline
+Building simulated queries for known-item topics: an analysis using six european languages & 97 \\ \hline
+Unsupervised query segmentation using clickthrough for information retrieval & 46 \\ \hline
+Compact query term selection using topically related text & 38 \\ \hline
+A frequency-based and a poisson-based definition of the probability of being informative & 39 \\ \hline
+Positional relevance model for pseudo-relevance feedback & 161 \\ \hline
+Learning for search result diversification & 42 \\ \hline
+Exploring reductions for long web queries & 74 \\ \hline
+Using statistical decision theory and relevance models for query-performance prediction & 25 \\ \hline
+Exploiting semantics for improving clinical information retrieval & 21 \\ \hline
+Modeling subset distributions for verbose queries & 11 \\ \hline
+Axiomatic analysis for improving the log-logistic feedback model & 8 \\ \hline
+Topic-centric classification of twitter user's political orientation & 12 \\ \hline
+Sigir 2014 workshop on semantic matching in information retrieval & 4 \\ \hline
+Discriminative models for information retrieval & 314 \\ \hline
+Retrieval and feedback models for blog feed search & 150 \\ \hline
+A ranking approach to target detection for automatic link generation & 9 \\ \hline
+Flat vs. hierarchical phrase-based translation models for cross-language information retrieval & 3 \\ \hline
+Non-compositional term dependence for information retrieval & 7 \\ \hline
+Query performance prediction in web search environments & 169 \\ \hline
+Building enriched document representations using aggregated anchor text & 62 \\ \hline
+How good is a span of terms?: exploiting proximity to improve web retrieval & 47 \\ \hline
+Query expansion using path-constrained random walks & 25 \\ \hline
+An adaptive evidence weighting method for medical record search & 14 \\ \hline
+Learning to efficiently rank & 74 \\ \hline
+Exploiting proximity feature in bigram language model for information retrieval & 6 \\ \hline
+Efficient cost-aware cascade ranking in multi-stage retrieval & 3 \\ \hline
+Set-based model: A new approach for information retrieval & 38 \\ \hline
+Modeling click-through based word-pairs for web search & 3 \\ \hline
+Term Proximity Constraints for Pseudo-Relevance Feedback & 0 \\ \hline
+Improving language estimation with the paragraph vector model for ad-hoc retrieval & 15 \\ \hline
+Learning to respond with deep neural networks for retrieval-based human-computer conversation system & 31 \\ \hline
+Find-similar: similarity browsing as a search tool & 55 \\ \hline
+Linear discriminant model for information retrieval & 118 \\ \hline
+Quote Recommendation in Dialogue using Deep Neural Network & 2 \\ \hline
+Query term ranking based on search results overlap & 1 \\ \hline
+Document retrieval using entity-based language models & 15 \\ \hline
+Modeling Document Novelty with Neural Tensor Network for Search Result Diversification & 10 \\ \hline
+An enhanced context-sensitive proximity model for probabilistic information retrieval & 6 \\ \hline
+Efficient \& Effective Selective Query Rewriting with Efficiency Predictions & 0 \\ \hline
+A Probabilistic Model for Information Retrieval Based on Maximum Value Distribution & 3 \\ \hline
+Using key concepts in a translation model for retrieval & 8 \\ \hline
+Evaluating non-deterministic retrieval systems & 3 \\ \hline
+A simple enhancement for ad-hoc information retrieval via topic modelling & 4 \\ \hline
+Retrieval sensitivity under training using different measures & 14 \\ \hline
+Copulas for information retrieval & 19 \\ \hline
+DBpedia-Entity v2: A Test Collection for Entity Search & 1 \\ \hline
+On the cost of phrase-based ranking & 1 \\ \hline
+SPOT: Selecting occuPations frOm Trajectories & 0 \\ \hline
+Entity query feature expansion using knowledge base links & 84 \\ \hline
+\end{longtable}
+\end{center}
+
+ \lstinputlisting[frame=single,caption={Headless chrome script to download rendered pages},label=lst:head,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/headless.js}
+
+ \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:parse,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/parse_scholar.py}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{sigir.png}
+\caption{Google scholar results for term dependency articles later than 2000 for ACM SIGIR}
+\label{fig:sigir}
+\end{figure}
 
 \clearpage
 
