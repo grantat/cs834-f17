@@ -26,17 +26,41 @@ Extra Credit: Wiki Small collection, 8 points extra credit:
 * compare the least and most popular articles (in terms of in-links) in the 2008 snapshot vs. the least and most popular articles in your 2017 snapshot. (1 pt)
 * compare and contrast the anchor text for the articles in the collection: are we gaining or losing terms? (1 pt)
 * compare and contrast the sizes of the same pages (i.e., 2008 vs. 2017) in: (2 pts)
-- bytes
-- total terms
-- total unique terms
+    - bytes
+    - total terms
+    - total unique terms
 * for all of the pages (i.e., treat each collection as a single unit), compare the 2008 vs. 2017 snapshots in: (2 pts)
-- bytes
-- total terms
-- total unique terms
+    - bytes
+    - total terms
+    - total unique terms
 
 ### Chosen questions:
 
+> 10.3. Compute five iterations of HITS (see Algorithm 3) and PageRank (see Figure
+4.11) on the graph in Figure 10.3. Discuss how the PageRank scores compare
+to the hub and authority scores produced by HITS.
 
+> 10.5. Find a community-based question answering site on the Web and ask two
+questions, one that is low-quality and one that is high-quality. Describe the answer
+quality of each question.
+
+> 10.6. Find two examples of document filtering systems on the Web. How do they
+build a profile for your information need? Is the system static or adaptive?
+
+> 10.9. Both the clustering and nearest neighbor–based collaborative filtering algorithms
+described in this chapter make predictions based on user/user similarity.
+Formulate both algorithms in terms of item/item similarity. How can the distance
+between two items be measured?
+
+> 10.11. Suggest how the maximum and minimum resource ranking scores, Rmax
+and Rmin, could be estimated for a given query
+
+> 11.11. Look at a sample of images or videos that have been tagged by users and
+separate the tags into three groups: those you think could eventually be done automatically
+by image processing and object recognition, those you think would
+not be possible to derive by image processing, and spam. Also decide which of the
+tags should be most useful for queries related to those images. Summarize your
+findings.
 
 ### Presentation due 2017-12-14:
 
