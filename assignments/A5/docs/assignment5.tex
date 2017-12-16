@@ -131,6 +131,19 @@ for a given query
 
 \subsection*{Answer}
 
+A relatively simple way to find the maximum and minimum resource ranking scores is by sorting results.
+Once query results are returned and we have the resource scores for each estimate it should be relatively to see the worst ranked document and the highest rank document.
+This is also dependent on the window of results.
+Since resource selection in a general distributed search application involves first
+ranking the nodes using their representations, and then selecting the top k ranked
+nodes, or all nodes that score above some threshold value.
+If I searched something in a search engine we would be given their top k results, normally 10, and then we can determine that the Rmax is the first result return.
+Since k is 10 here then Rmin would be 10, but if k increased it would still be considered the max k.
+
+The book also mentions using query likelihood of query term frequency.
+A query's likelihood could be compared to the terms returned in SERP results and then Rmin and Rmax can computed based on comparison of these values.
+Either way, the resources would be ranked showed that there is a max and min value in the results.
+
 
 \clearpage
 
