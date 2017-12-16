@@ -36,21 +36,12 @@ Extra Credit: Wiki Small collection, 8 points extra credit:
 
 ### Chosen questions:
 
-> 10.3. Compute five iterations of HITS (see Algorithm 3) and PageRank (see Figure
-4.11) on the graph in Figure 10.3. Discuss how the PageRank scores compare
-to the hub and authority scores produced by HITS.
-
 > 10.5. Find a community-based question answering site on the Web and ask two
 questions, one that is low-quality and one that is high-quality. Describe the answer
 quality of each question.
 
 > 10.6. Find two examples of document filtering systems on the Web. How do they
 build a profile for your information need? Is the system static or adaptive?
-
-> 10.9. Both the clustering and nearest neighbor–based collaborative filtering algorithms
-described in this chapter make predictions based on user/user similarity.
-Formulate both algorithms in terms of item/item similarity. How can the distance
-between two items be measured?
 
 > 10.11. Suggest how the maximum and minimum resource ranking scores, Rmax
 and Rmin, could be estimated for a given query
