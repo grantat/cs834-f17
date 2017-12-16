@@ -162,6 +162,7 @@ Google creates a query string that I could reuse to perform these queries, for e
 One of the keys is ``start'' indicating an offset position for pagination.
 Since there were 10 results per page I created two scripts to download each page and then parse the results.
 The first script I wrote was done in nodejs using headless chrome, puppeteer.js, as shown in Listing \ref{lst:head}.
+The pages downloaded pages are found in my assignment 5 github repository \cite{github}.
 The other script was used to parse the document for titles, citation counts, and author names as shown in Listing \ref{lst:parse}.
 For this question I left out author names as it was difficult to parse utf-8 for latex.
 
@@ -305,7 +306,7 @@ Entity query feature expansion using knowledge base links & 84 \\ \hline
 
  \lstinputlisting[frame=single,caption={Headless chrome script to download rendered pages},label=lst:head,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/headless.js}
 
- \lstinputlisting[frame=single,caption={Sitemap created from my assignment 1 (A1) directory},label=lst:parse,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/parse_scholar.py}
+ \lstinputlisting[frame=single,caption={Script to parse google scholar HTML pages},label=lst:parse,captionpos=b,numbers=left,showspaces=false,showstringspaces=false,basicstyle=\footnotesize]{\srcPath/parse_scholar.py}
 
 
 \begin{figure}[h]
